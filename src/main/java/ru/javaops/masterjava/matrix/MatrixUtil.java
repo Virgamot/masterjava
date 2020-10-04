@@ -1,8 +1,7 @@
 package ru.javaops.masterjava.matrix;
 
 import java.util.Random;
-import java.util.concurrent.ExecutionException;
-import java.util.concurrent.ExecutorService;
+import java.util.concurrent.*;
 
 /**
  * gkislin
@@ -10,11 +9,34 @@ import java.util.concurrent.ExecutorService;
  */
 public class MatrixUtil {
 
-    // TODO implement parallel multiplication matrixA*matrixB
-    public static int[][] concurrentMultiply(int[][] matrixA, int[][] matrixB, ExecutorService executor) throws InterruptedException, ExecutionException {
+    public static int[][] concurrentMultiply(int[][] matrixA, int[][] matrixB, ExecutorService executor) throws InterruptedException {
         final int matrixSize = matrixA.length;
         final int[][] matrixC = new int[matrixSize][matrixSize];
 
+        CountDownLatch latch = new CountDownLatch(matrixSize);
+
+        for (int j = 0; j < matrixSize; j++) {
+            final int fj = j;
+            executor.submit(() -> {
+                int[] thatColumn = new int[matrixSize];
+
+                for (int k = 0; k < matrixSize; k++) {
+                    thatColumn[k] = matrixB[k][fj];
+                }
+
+                for (int i = 0; i < matrixSize; i++) {
+                    int[] thisRow = matrixA[i];
+                    int sum = 0;
+                    for (int k = 0; k < matrixSize; k++) {
+                        sum += thisRow[k] * thatColumn[k];
+                    }
+                    matrixC[i][fj] = sum;
+                }
+
+                latch.countDown();
+            });
+        }
+        latch.await();
         return matrixC;
     }
 
