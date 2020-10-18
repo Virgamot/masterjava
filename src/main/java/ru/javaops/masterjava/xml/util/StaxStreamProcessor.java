@@ -20,13 +20,11 @@ public class StaxStreamProcessor implements AutoCloseable {
     private static final XMLInputFactory FACTORY = XMLInputFactory.newInstance();
 
     private XMLStreamReader reader;
-    private XMLEventReader eventReader;
     private InputStream inputStream;
 
     public StaxStreamProcessor(InputStream is) throws XMLStreamException {
         inputStream = is;
         reader = FACTORY.createXMLStreamReader(is);
-        eventReader = FACTORY.createXMLEventReader(is);
     }
 
     public XMLStreamReader getReader() {
@@ -54,6 +52,8 @@ public class StaxStreamProcessor implements AutoCloseable {
     }
 
     public List<User> getUsersFromGroup(String groupId) throws XMLStreamException {
+
+        XMLEventReader eventReader= FACTORY.createXMLEventReader(inputStream);
         List<User> users = new ArrayList<>();
         User user = null;
         boolean isGroupIdMatched = false;
@@ -89,10 +89,13 @@ public class StaxStreamProcessor implements AutoCloseable {
                 }
             }
         }
+
+        eventReader.close();
         return users;
     }
 
     public String getGroupId(String groupName) throws XMLStreamException {
+        XMLEventReader eventReader= FACTORY.createXMLEventReader(inputStream);
         Attribute groupId = null;
         while (eventReader.hasNext()) {
             XMLEvent nextEvent = eventReader.nextEvent();
@@ -104,11 +107,13 @@ public class StaxStreamProcessor implements AutoCloseable {
                 if (startElement.getName().getLocalPart().equals("name")) {
                     nextEvent = eventReader.nextEvent();
                     if (groupName.equals(nextEvent.asCharacters().getData())) {
+                        eventReader.close();
                         return groupId != null ? groupId.getValue() : "";
                     }
                 }
             }
         }
+        eventReader.close();
         return "";
     }
 
@@ -118,10 +123,7 @@ public class StaxStreamProcessor implements AutoCloseable {
 
     public void reload(InputStream is) throws Exception {
         inputStream.close();
-        reader.close();
-        eventReader.close();
-        reader = FACTORY.createXMLStreamReader(is);
-        eventReader = FACTORY.createXMLEventReader(is);
+        inputStream=is;
     }
 
     @Override
@@ -129,14 +131,6 @@ public class StaxStreamProcessor implements AutoCloseable {
         if (reader != null) {
             try {
                 reader.close();
-            } catch (XMLStreamException e) {
-                // empty
-            }
-        }
-
-        if (eventReader != null) {
-            try {
-                eventReader.close();
             } catch (XMLStreamException e) {
                 // empty
             }
