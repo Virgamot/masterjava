@@ -3,18 +3,19 @@ package ru.javaops.masterjava.xml.util;
 import ru.javaops.masterjava.xml.schema.User;
 
 import javax.xml.namespace.QName;
-import javax.xml.stream.XMLEventReader;
-import javax.xml.stream.XMLInputFactory;
-import javax.xml.stream.XMLStreamException;
-import javax.xml.stream.XMLStreamReader;
+import javax.xml.stream.*;
 import javax.xml.stream.events.Attribute;
 import javax.xml.stream.events.EndElement;
 import javax.xml.stream.events.StartElement;
 import javax.xml.stream.events.XMLEvent;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.StringWriter;
+import java.io.Writer;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class StaxStreamProcessor implements AutoCloseable {
     private static final XMLInputFactory FACTORY = XMLInputFactory.newInstance();
@@ -115,6 +116,60 @@ public class StaxStreamProcessor implements AutoCloseable {
         }
         eventReader.close();
         return "";
+    }
+
+    public String generateHtmlUsersData() throws Exception
+    {
+        Map<String, String> map = new HashMap<>();
+        String email="";
+        while (reader.hasNext()) {
+            reader.next();
+            if (reader.isStartElement()) {
+                if (reader.getLocalName().equals("User")) {
+                    email=reader.getAttributeValue(null,"email");
+                }
+                if (reader.getLocalName().equals("fullName")){
+                    map.put(reader.getElementText(),email);
+                }
+            }
+        }
+
+        String htmlPage="";
+
+        try (Writer output = new StringWriter()) {
+            XMLStreamWriter writer = XMLOutputFactory
+                    .newInstance()
+                    .createXMLStreamWriter(output);
+
+            writer.writeDTD("<!DOCTYPE html>");
+            writer.writeStartElement("html");
+            writer.writeAttribute("lang", "en");
+            writer.writeStartElement("head");
+            writer.writeDTD("<META http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">");
+            writer.writeEndElement();
+
+            writer.writeStartElement("body");
+
+
+            for(Map.Entry<String,String> userWithEmail:map.entrySet())
+            {
+                writer.writeStartElement("p");
+                writer.writeCharacters(userWithEmail.getKey());
+                writer.writeEndElement();
+
+                writer.writeStartElement("p");
+                writer.writeCharacters(userWithEmail.getValue());
+                writer.writeEndElement();
+            }
+
+            writer.writeEndElement();
+            writer.writeEndDocument();
+            writer.flush();
+
+            htmlPage=output.toString();
+        }
+
+        return htmlPage;
     }
 
     public String getText() throws XMLStreamException {

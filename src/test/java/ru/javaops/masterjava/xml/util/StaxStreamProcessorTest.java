@@ -33,4 +33,13 @@ public class StaxStreamProcessorTest {
             }
         }
     }
+
+    @Test
+    public void generateUsersHtmlTest() throws Exception {
+        try (StaxStreamProcessor processor =
+                     new StaxStreamProcessor(Resources.getResource("payload.xml").openStream())) {
+            String htmlPageWithUsers = processor.generateHtmlUsersData();
+            System.out.println(htmlPageWithUsers);
+        }
+    }
 }
