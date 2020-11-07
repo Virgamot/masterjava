@@ -11,22 +11,16 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
 
-    <artifactId>upload</artifactId>
+    <artifactId>mail-service</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <name>Mail Service</name>
     <packaging>war</packaging>
-    <name>Upload</name>
 
     <dependencies>
         <dependency>
             <groupId>ru.javaops</groupId>
-            <artifactId>common</artifactId>
+            <artifactId>mail-api</artifactId>
             <version>${project.version}</version>
         </dependency>
-        <dependency>
-            <groupId>com.j2html</groupId>
-            <artifactId>j2html</artifactId>
-            <version>1.3.0</version>
-        </dependency>
-
     </dependencies>
 </project>

@@ -14,11 +14,9 @@
     <modules>
         <module>upload</module>
         <module>common</module>
-<!--
-        <module>webapp</module>
-        <module>mail-service</module>
-        <module>mail-api</module>
         <module>test</module>
--->
+        <module>mail-api</module>
+        <module>mail-service</module>
+        <module>webapp</module>
     </modules>
 </project>
