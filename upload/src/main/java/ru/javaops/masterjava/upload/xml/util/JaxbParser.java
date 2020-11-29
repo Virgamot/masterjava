@@ -9,6 +9,10 @@ import javax.xml.stream.XMLStreamReader;
 import javax.xml.transform.stream.StreamSource;
 import javax.xml.validation.Schema;
 import java.io.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.concurrent.Callable;
 
 
 /**
@@ -21,11 +25,40 @@ public class JaxbParser {
     protected JaxbUnmarshaller jaxbUnmarshaller;
     protected Schema schema;
 
+    private static List<Class> classes=new ArrayList<>();
+    private static JAXBContext jaxbContext;
+
     public JaxbParser(Class... classesToBeBound) {
+        List<Class> classList=Arrays.asList(classesToBeBound);
+
+        if (!classes.containsAll(classList)) {
+            classes.addAll(classList);
+            try {
+                init(getJaxbContext(classes.toArray(new Class[0])));
+            } catch (JAXBException e) {
+                throw new IllegalArgumentException(e);
+            }
+        }
+    }
+
+    public static JAXBContext getJaxbContext(Class... classesToBeBound) {
+        if (jaxbContext == null) {
+            try {
+                return JAXBContext.newInstance(classesToBeBound);
+            } catch (JAXBException e) {
+                throw new IllegalArgumentException(e);
+            }
+        }
+        return jaxbContext;
+    }
+
+    public static <T> T safe(Callable<T> fn) {
         try {
-            init(JAXBContext.newInstance(classesToBeBound));
-        } catch (JAXBException e) {
-            throw new IllegalArgumentException(e);
+            return fn.call();
+        } catch (RuntimeException e) {
+            throw e;
+        } catch (Exception e) {
+            throw new RuntimeException(e);
         }
     }
 
