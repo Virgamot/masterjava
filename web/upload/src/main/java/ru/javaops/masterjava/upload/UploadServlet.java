@@ -1,6 +1,8 @@
 package ru.javaops.masterjava.upload;
 
 import org.thymeleaf.context.WebContext;
+import ru.javaops.masterjava.persist.DBIProvider;
+import ru.javaops.masterjava.persist.dao.UserDao;
 import ru.javaops.masterjava.persist.model.User;
 
 import javax.servlet.ServletException;
@@ -21,6 +23,7 @@ import static ru.javaops.masterjava.common.web.ThymeleafListener.engine;
 public class UploadServlet extends HttpServlet {
 
     private final UserProcessor userProcessor = new UserProcessor();
+    private final UserDao userDao = DBIProvider.getDao(UserDao.class);
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -32,6 +35,14 @@ public class UploadServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         final WebContext webContext = new WebContext(req, resp, req.getServletContext(), req.getLocale());
 
+        if ("delete".equals(req.getParameter("action"))) {
+            cleanDB();
+            resp.sendRedirect("/upload");
+            return;
+        }
+
+        int chunkSize = Integer.parseInt(req.getParameter("chunkSize"));
+
         try {
 //            http://docs.oracle.com/javaee/6/tutorial/doc/glraq.html
             Part filePart = req.getPart("fileToUpload");
@@ -40,6 +51,13 @@ public class UploadServlet extends HttpServlet {
             }
             try (InputStream is = filePart.getInputStream()) {
                 List<User> users = userProcessor.process(is);
+
+                DBIProvider.getDBI().useTransaction(
+                        (conn, status) -> {
+                            userDao.insertAll(users, chunkSize);
+                        }
+                );
+
                 webContext.setVariable("users", users);
                 engine.process("result", webContext, resp.getWriter());
             }
@@ -47,5 +65,13 @@ public class UploadServlet extends HttpServlet {
             webContext.setVariable("exception", e);
             engine.process("exception", webContext, resp.getWriter());
         }
+    }
+
+    private void cleanDB() {
+        DBIProvider.getDBI().useTransaction(
+                (conn, status) -> {
+                    userDao.clean();
+                }
+        );
     }
 }

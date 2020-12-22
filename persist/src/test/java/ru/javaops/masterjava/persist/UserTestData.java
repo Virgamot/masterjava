@@ -34,4 +34,20 @@ public class UserTestData {
             dao.insert(USER3);
         });
     }
+
+    public static void compareUsers(List<User> usersActual, List<User> usersExpected) throws Exception {
+        if (usersActual == null || usersExpected == null || usersActual.size() != usersExpected.size()) {
+            throw new IllegalArgumentException("Invalid data to compare");
+        }
+
+        for (int i = 0; i < usersActual.size(); i++) {
+            User actualUser = usersActual.get(i);
+            User expectedUser = usersExpected.get(i);
+            if (!actualUser.getEmail().equals(expectedUser.getEmail()) ||
+                    !actualUser.getFullName().equals(expectedUser.getFullName()) ||
+                    !actualUser.getFlag().equals(expectedUser.getFlag())) {
+                throw new Exception("Users are not equal");
+            }
+        }
+    }
 }

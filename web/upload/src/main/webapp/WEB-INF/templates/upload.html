@@ -8,9 +8,16 @@
     <p>
         <input type="file" name="fileToUpload" id="fileToUpload"><br/>
     </p>
+    <h4>Enter chunk size</h4>
+    <p>
+        <input type="number" name="chunkSize" id="chunkSize">
+    </p>
     <p>
         <input type="submit" value="Upload" name="submit">
     </p>
+</form>
+<form action="?action=delete" method="post" >
+    <input type="submit" value="Clean DB" name="CleanDB">
 </form>
 </body>
 </html>
