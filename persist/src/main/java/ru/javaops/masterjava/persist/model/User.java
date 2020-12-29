@@ -14,13 +14,12 @@ public class User extends BaseEntity {
     private @NonNull UserFlag flag;
     @Column("city_id")
     //some problem in naming with 'camel case style'
-    private Integer city_id;
+    private @NonNull Integer city_id;
     @Column("group_id")
     private Integer group_id;
 
     public User(Integer id, String fullName, String email, UserFlag flag, Integer cityId, Integer groupId) {
-        this(fullName, email, flag);
-        this.city_id = cityId;
+        this(fullName, email, flag, cityId);
         this.group_id = groupId;
         this.id=id;
     }

@@ -8,7 +8,7 @@ import ru.javaops.masterjava.persist.model.City;
 
 import java.util.List;
 
-import static ru.javaops.masterjava.persist.CityTestData.FIRST4_CITIES;
+import static ru.javaops.masterjava.persist.CityTestData.*;
 
 public class CityDaoTest extends AbstractDaoTest<CityDao> {
 
@@ -24,5 +24,11 @@ public class CityDaoTest extends AbstractDaoTest<CityDao> {
     public void getWithLimit() {
         List<City> cities = dao.getWithLimit(4);
         Assert.assertEquals(FIRST4_CITIES, cities);
+    }
+
+    @Test
+    public void getByShortName() {
+        City spbCity = dao.getByShortName(SPB_SHORT_NAME);
+        Assert.assertEquals(SPB, spbCity);
     }
 }

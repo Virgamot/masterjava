@@ -97,6 +97,10 @@ public class ObjectFactory {
         return new CityType();
     }
 
+    public UserWithoutRefs createUserWithoutRefs() {
+        return new UserWithoutRefs();
+    }
+
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link CityType }{@code >}}
      * 

@@ -73,9 +73,11 @@ public class PayloadProcessor {
             }
             elementValue.setLength(0);
 
-            ru.javaops.masterjava.xml.schema.User xmlUser = unmarshaller.unmarshal(processor.getReader(), ru.javaops.masterjava.xml.schema.User.class);
+            ru.javaops.masterjava.xml.schema.UserWithoutRefs xmlUser = unmarshaller.unmarshal(processor.getReader(), ru.javaops.masterjava.xml.schema.UserWithoutRefs.class);
 
-            final User user = new User(id++, xmlUser.getValue(), xmlUser.getEmail(), UserFlag.valueOf(xmlUser.getFlag().value()),null,null);
+            City city=getCityByShortName(xmlUser.getCity().toString());
+
+            final User user = new User(id++, xmlUser.getValue(), xmlUser.getEmail(), UserFlag.valueOf(xmlUser.getFlag().value()),city.getId(),null);
             chunk.add(user);
             if (chunk.size() == chunkSize) {
                 addChunkFutures(chunkFutures, chunk);
@@ -104,6 +106,16 @@ public class PayloadProcessor {
             failed.add(new FailedEmails(allAlreadyPresents.toString(), "already presents"));
         }
         return failed;
+    }
+
+    private City getCityByShortName(String shortName) {
+        City city= cityDao.getByShortName(shortName);
+
+        if (city==null)
+        {
+            throw new IllegalStateException("City with short name "+shortName+" not found");
+        }
+        return city;
     }
 
     private void addChunkFutures(Map<String, Future<List<String>>> chunkFutures, List<User> chunk) {

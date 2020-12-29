@@ -27,6 +27,9 @@ public abstract class CityDao implements AbstractDao {
     @SqlUpdate("INSERT INTO cities (id, name, short_name) VALUES (:id, :name, :short_name) ON CONFLICT DO NOTHING")
     abstract void insertWitId(@BindBean City city);
 
+    @SqlQuery("SELECT * FROM cities WHERE short_name ILIKE :shortName")
+    public abstract City getByShortName(@Bind("shortName") String shortName);
+
     @SqlQuery("SELECT * FROM cities ORDER BY name LIMIT :it")
     public abstract List<City> getWithLimit(@Bind int limit);
 
