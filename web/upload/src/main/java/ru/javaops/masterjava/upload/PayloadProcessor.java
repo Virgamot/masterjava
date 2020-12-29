@@ -4,7 +4,9 @@ import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import lombok.val;
 import ru.javaops.masterjava.persist.DBIProvider;
+import ru.javaops.masterjava.persist.dao.CityDao;
 import ru.javaops.masterjava.persist.dao.UserDao;
+import ru.javaops.masterjava.persist.model.City;
 import ru.javaops.masterjava.persist.model.User;
 import ru.javaops.masterjava.persist.model.UserFlag;
 import ru.javaops.masterjava.xml.schema.ObjectFactory;
@@ -25,11 +27,12 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 
 @Slf4j
-public class UserProcessor {
+public class PayloadProcessor {
     private static final int NUMBER_THREADS = 4;
 
     private static final JaxbParser jaxbParser = new JaxbParser(ObjectFactory.class);
     private static UserDao userDao = DBIProvider.getDao(UserDao.class);
+    private static CityDao cityDao = DBIProvider.getDao(CityDao.class);
 
     private ExecutorService executorService = Executors.newFixedThreadPool(NUMBER_THREADS);
 
@@ -57,9 +60,22 @@ public class UserProcessor {
         val processor = new StaxStreamProcessor(is);
         val unmarshaller = jaxbParser.createUnmarshaller();
 
-        while (processor.doUntil(XMLEvent.START_ELEMENT, "User")) {
+//        while (processor.doUntil(XMLEvent.START_ELEMENT, "User")) {
+        StringBuilder elementValue=new StringBuilder();
+        while (processor.doUntil(XMLEvent.START_ELEMENT, elementValue, "User","City")) {
+
+            if (elementValue.toString().equals("City")) {
+                ru.javaops.masterjava.xml.schema.CityType xmlCity = unmarshaller.unmarshal(processor.getReader(), ru.javaops.masterjava.xml.schema.CityType.class);
+                final City city = new City(xmlCity.getValue(), xmlCity.getId());
+                cityDao.insert(city);
+                elementValue.setLength(0);
+                continue;
+            }
+            elementValue.setLength(0);
+
             ru.javaops.masterjava.xml.schema.User xmlUser = unmarshaller.unmarshal(processor.getReader(), ru.javaops.masterjava.xml.schema.User.class);
-            final User user = new User(id++, xmlUser.getValue(), xmlUser.getEmail(), UserFlag.valueOf(xmlUser.getFlag().value()));
+
+            final User user = new User(id++, xmlUser.getValue(), xmlUser.getEmail(), UserFlag.valueOf(xmlUser.getFlag().value()),null,null);
             chunk.add(user);
             if (chunk.size() == chunkSize) {
                 addChunkFutures(chunkFutures, chunk);

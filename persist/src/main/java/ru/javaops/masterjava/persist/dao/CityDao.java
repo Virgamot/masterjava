@@ -20,11 +20,11 @@ public abstract class CityDao implements AbstractDao {
         return city;
     }
     
-    @SqlUpdate("INSERT INTO cities (name) VALUES (:name) ")
+    @SqlUpdate("INSERT INTO cities (name, short_name) VALUES (:name, :short_name) ON CONFLICT DO NOTHING")
     @GetGeneratedKeys
     abstract int insertGeneratedId(@BindBean City city);
 
-    @SqlUpdate("INSERT INTO cities (id, name) VALUES (:id, :name) ")
+    @SqlUpdate("INSERT INTO cities (id, name, short_name) VALUES (:id, :name, :short_name) ON CONFLICT DO NOTHING")
     abstract void insertWitId(@BindBean City city);
 
     @SqlQuery("SELECT * FROM cities ORDER BY name LIMIT :it")

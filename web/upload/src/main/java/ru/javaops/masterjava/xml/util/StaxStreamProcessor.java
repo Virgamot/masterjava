@@ -5,6 +5,9 @@ import javax.xml.stream.XMLStreamException;
 import javax.xml.stream.XMLStreamReader;
 import javax.xml.stream.events.XMLEvent;
 import java.io.InputStream;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public class StaxStreamProcessor implements AutoCloseable {
     private static final XMLInputFactory FACTORY = XMLInputFactory.newInstance();
@@ -53,6 +56,31 @@ public class StaxStreamProcessor implements AutoCloseable {
         }
         return false;
     }
+
+    /**
+     *
+     * @param stopEvent XML tag type for parsing
+     * @param elementVal output value of founded tag
+     * @param values desired values
+     * @return true if xml value from values founded
+     * @throws XMLStreamException
+     */
+    public boolean doUntil(int stopEvent, StringBuilder elementVal, String... values) throws XMLStreamException {
+        List<String> valuesList = Arrays.asList(values);
+
+        while (reader.hasNext()) {
+            int event = reader.next();
+            if (event == stopEvent) {
+                String value = getValue(event);
+                if (valuesList.contains(value)) {
+                    elementVal.append(value);
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
 
     public String getValue(int event) throws XMLStreamException {
         return (event == XMLEvent.CHARACTERS) ? reader.getText() : reader.getLocalName();

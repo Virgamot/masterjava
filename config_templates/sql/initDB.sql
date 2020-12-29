@@ -19,9 +19,12 @@ CREATE SEQUENCE groups_seq START 100000;
 CREATE SEQUENCE projects_seq START 100000;
 
 CREATE TABLE cities (
-  id        INTEGER PRIMARY KEY DEFAULT nextval('city_seq'),
-  name      TEXT NOT NULL
+  id            INTEGER PRIMARY KEY DEFAULT nextval('city_seq'),
+  name          TEXT NOT NULL,
+  short_name    TEXT NOT NULL
 );
+CREATE UNIQUE INDEX city_name_idx ON cities (name);
+CREATE UNIQUE INDEX city_short_name_idx ON cities (short_name);
 
 CREATE TABLE groups (
   id        INTEGER PRIMARY KEY DEFAULT nextval('groups_seq'),
@@ -39,7 +42,7 @@ CREATE TABLE users (
     full_name TEXT NOT NULL,
     email     TEXT NOT NULL,
     flag      user_flag NOT NULL,
-    city_id   INTEGER NOT NULL REFERENCES cities(id),
-    group_id  INTEGER NOT NULL REFERENCES groups(id)
+    city_id   INTEGER REFERENCES cities(id),
+    group_id  INTEGER REFERENCES groups(id)
 );
 CREATE UNIQUE INDEX email_idx ON users (email);
