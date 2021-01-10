@@ -7,6 +7,8 @@ import ru.javaops.masterjava.persist.model.type.UserFlag;
 
 import java.util.List;
 
+import static ru.javaops.masterjava.persist.CityTestData.*;
+
 public class UserTestData {
     public static User ADMIN;
     public static User DELETED;
