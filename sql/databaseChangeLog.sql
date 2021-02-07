@@ -32,3 +32,11 @@ CREATE TABLE user_group (
   group_id INTEGER NOT NULL REFERENCES groups (id),
   CONSTRAINT users_group_idx UNIQUE (user_id, group_id)
 );
+
+CREATE TABLE email_result (
+  id         INTEGER PRIMARY KEY DEFAULT nextval('common_seq'),
+  email_to   TEXT NOT NULL,
+  subject    TEXT,
+  body       TEXT,
+  result     TEXT
+);
