@@ -16,7 +16,7 @@ public abstract class UserGroupDao implements AbstractDao {
     @Override
     public abstract void clean();
 
-    @SqlBatch("INSERT INTO user_group (user_id, group_id) VALUES (:userId, :groupId)")
+    @SqlBatch("INSERT INTO user_group (user_id, group_id) VALUES (:userId, :groupId) ON CONFLICT DO NOTHING")
     public abstract void insertBatch(@BindBean List<UserGroup> userGroups);
 
     @SqlQuery("SELECT user_id FROM user_group WHERE group_id=:it")

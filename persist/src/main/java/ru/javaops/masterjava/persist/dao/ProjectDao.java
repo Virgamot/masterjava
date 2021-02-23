@@ -26,7 +26,7 @@ public abstract class ProjectDao implements AbstractDao {
         return StreamEx.of(getAll()).toMap(Project::getName, g -> g);
     }
 
-    @SqlUpdate("INSERT INTO project (name, description)  VALUES (:name, :description)")
+    @SqlUpdate("INSERT INTO project (name, description)  VALUES (:name, :description) ON CONFLICT DO NOTHING")
     @GetGeneratedKeys
     public abstract int insertGeneratedId(@BindBean Project project);
 
