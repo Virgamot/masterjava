@@ -1,0 +1,31 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Mail sending</title>
+</head>
+<body>
+<form action="" method="post">
+    <h3>Select users</h3>
+        <select name="emailTo" id="emailTo" multiple="multiple">
+            <!--/*@thymesVar id="users" type="java.util.List<ru.javaops.masterjava.persist.model.User>"*/-->
+            <option th:each="user: ${users}"
+                th:value="${user.email}"
+                th:utext="${user.fullName}">
+            </option>
+        </select>
+    <p>
+        <label for="subject">Subject</label>
+        <!--/*@thymesVar id="subject" type="java.lang.String"*/-->
+        <input type="text" name="subject" id="subject" th:value="${subject}" required/><br/><br/>
+    </p>
+    <p>
+        <label for="email_body">Body</label>
+        <!--/*@thymesVar id="email_body" type="java.lang.String"*/-->
+        <input type="text" name="email_body" id="email_body" th:value="${email_body}" required/><br/><br/>
+    </p>
+    <p>
+        <input type="submit" value="Send" name="submit">
+    </p>
+</form>
+</body>
+</html>
