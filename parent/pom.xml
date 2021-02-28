@@ -18,7 +18,8 @@
         <logback.version>1.2.3</logback.version>
         <slf4j.version>1.7.25</slf4j.version>
 
-        <masterjava.config>/apps/masterjava/config/</masterjava.config>
+        <!-- Can be overriten in ${MAVEN_HOME}\conf\settings.xml-->
+        <masterjava.config>C:/apps/masterjava/config/</masterjava.config>
         <dependency.locations.enabled>false</dependency.locations.enabled>
     </properties>
 
