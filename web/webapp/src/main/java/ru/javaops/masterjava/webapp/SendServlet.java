@@ -1,17 +1,23 @@
 package ru.javaops.masterjava.webapp;
 
+import com.google.common.io.ByteStreams;
 import lombok.extern.slf4j.Slf4j;
 import ru.javaops.masterjava.service.mail.GroupResult;
 import ru.javaops.masterjava.service.mail.MailWSClient;
 
 import javax.servlet.ServletException;
+import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.Part;
 import java.io.IOException;
+import java.io.InputStream;
+import java.nio.charset.StandardCharsets;
 
 @WebServlet("/send")
+@MultipartConfig(fileSizeThreshold = 1024 * 1024 * 10) //10 MB in memory limit
 @Slf4j
 public class SendServlet extends HttpServlet {
     @Override
@@ -24,7 +30,15 @@ public class SendServlet extends HttpServlet {
             String users = req.getParameter("users");
             String subject = req.getParameter("subject");
             String body = req.getParameter("body");
-            GroupResult groupResult = MailWSClient.sendBulk(MailWSClient.split(users), subject, body);
+            Part attachedFile = req.getPart("attachment");
+            byte[] attachment;
+            try (InputStream is = attachedFile.getInputStream()) {
+                attachment = ByteStreams.toByteArray(is);
+            }
+            if (new String(attachment, StandardCharsets.UTF_8).equals("undefined")) {
+                attachment = new byte[0];
+            }
+            GroupResult groupResult = MailWSClient.sendBulk(MailWSClient.split(users), subject, body, attachment);
             result = groupResult.toString();
             log.info("Processing finished with result: {}", result);
         } catch (Exception e) {

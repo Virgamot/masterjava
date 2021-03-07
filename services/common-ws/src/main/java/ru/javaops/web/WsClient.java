@@ -7,6 +7,7 @@ import ru.javaops.masterjava.config.Configs;
 import javax.xml.namespace.QName;
 import javax.xml.ws.BindingProvider;
 import javax.xml.ws.Service;
+import javax.xml.ws.soap.MTOMFeature;
 import java.net.URL;
 import java.util.Map;
 
@@ -32,7 +33,7 @@ public class WsClient<T> {
 
     //  Post is not thread-safe (http://stackoverflow.com/a/10601916/548473)
     public T getPort() {
-        T port = service.getPort(serviceClass);
+        T port = service.getPort(serviceClass,new MTOMFeature());
         BindingProvider bp = (BindingProvider) port;
         Map<String, Object> requestContext = bp.getRequestContext();
         requestContext.put(BindingProvider.ENDPOINT_ADDRESS_PROPERTY, endpointAddress);
