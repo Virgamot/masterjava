@@ -24,16 +24,16 @@ public class MailWSClient {
     }
 
 
-    public static String sendToGroup(final Set<Addressee> to, final Set<Addressee> cc, final String subject, final String body, final byte[] attachment) throws WebStateException {
+    public static String sendToGroup(final Set<Addressee> to, final Set<Addressee> cc, final String subject, final String body) throws WebStateException {
         log.info("Send to group to '" + to + "' cc '" + cc + "' subject '" + subject + (log.isDebugEnabled() ? "\nbody=" + body : ""));
-        String status = WS_CLIENT.getPort().sendToGroup(to, cc, subject, body, attachment);
+        String status = WS_CLIENT.getPort().sendToGroup(to, cc, subject, body);
         log.info("Send to group with status: " + status);
         return status;
     }
 
-    public static GroupResult sendBulk(final Set<Addressee> to, final String subject, final String body, final byte[] attachment) throws WebStateException {
+    public static GroupResult sendBulk(final Set<Addressee> to, final String subject, final String body) throws WebStateException {
         log.info("Send bulk to '" + to + "' subject '" + subject + (log.isDebugEnabled() ? "\nbody=" + body : ""));
-        GroupResult result = WS_CLIENT.getPort().sendBulk(to, subject, body, attachment);
+        GroupResult result = WS_CLIENT.getPort().sendBulk(to, subject, body);
         log.info("Sent bulk with result: " + result);
         return result;
     }

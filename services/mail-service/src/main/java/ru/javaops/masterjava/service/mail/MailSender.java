@@ -2,10 +2,8 @@ package ru.javaops.masterjava.service.mail;
 
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
-import com.google.common.io.Files;
 import lombok.extern.slf4j.Slf4j;
 import lombok.val;
-import org.apache.commons.mail.EmailAttachment;
 import org.apache.commons.mail.EmailException;
 import ru.javaops.masterjava.ExceptionType;
 import ru.javaops.masterjava.persist.DBIProvider;
@@ -13,32 +11,22 @@ import ru.javaops.masterjava.service.mail.persist.MailCase;
 import ru.javaops.masterjava.service.mail.persist.MailCaseDao;
 import ru.javaops.web.WebStateException;
 
-import java.io.File;
-import java.io.IOException;
 import java.util.Set;
 
 @Slf4j
 public class MailSender {
     private static final MailCaseDao MAIL_CASE_DAO = DBIProvider.getDao(MailCaseDao.class);
 
-    static MailResult sendTo(Addressee to, String subject, String body, byte[] attachment) throws WebStateException {
-        val state = sendToGroup(ImmutableSet.of(to), ImmutableSet.of(), subject, body, attachment);
+    static MailResult sendTo(Addressee to, String subject, String body) throws WebStateException {
+        val state = sendToGroup(ImmutableSet.of(to), ImmutableSet.of(), subject, body);
         return new MailResult(to.getEmail(), state);
     }
 
-    static String sendToGroup(Set<Addressee> to, Set<Addressee> cc, String subject, String body, byte[] attachment) throws WebStateException {
+    static String sendToGroup(Set<Addressee> to, Set<Addressee> cc, String subject, String body) throws WebStateException {
         log.info("Send mail to \'" + to + "\' cc \'" + cc + "\' subject \'" + subject + (log.isDebugEnabled() ? "\nbody=" + body : ""));
         String state = MailResult.OK;
         try {
             val email = MailConfig.createHtmlEmail();
-
-            if (attachment.length != 0) {
-                File emailAttachment = File.createTempFile("attachment", "");
-                emailAttachment.deleteOnExit();
-                Files.write(attachment, emailAttachment);
-                email.attach(emailAttachment);
-            }
-
             email.setSubject(subject);
             email.setHtmlMsg(body);
             for (Addressee addressee : to) {
@@ -52,7 +40,7 @@ public class MailSender {
             email.setHeaders(ImmutableMap.of("List-Unsubscribe", "<mailto:masterjava@javaops.ru?subject=Unsubscribe&body=Unsubscribe>"));
 
             email.send();
-        } catch (EmailException | IOException e) {
+        } catch (EmailException e) {
             log.error(e.getMessage(), e);
             state = e.getMessage();
         }
