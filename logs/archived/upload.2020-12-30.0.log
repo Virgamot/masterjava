@@ -1,0 +1,102 @@
+2020-12-30_01:00:47.395 [RMI TCP Connection(3)-127.0.0.1] INFO  DBIProvider [DBIProvider.java:27] - Init jDBI with  JNDI
+2020-12-30_01:02:42.148 [http-nio-8080-exec-8] INFO  PayloadProcessor [PayloadProcessor.java:54] - Start processing with chunkSize=2
+2020-12-30_01:02:42.586 [http-nio-8080-exec-8] INFO  UploadServlet [UploadServlet.java:56] - null
+java.lang.NullPointerException: null
+	at ru.javaops.masterjava.upload.PayloadProcessor.process(PayloadProcessor.java:78)
+	at ru.javaops.masterjava.upload.UploadServlet.doPost(UploadServlet.java:46)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:652)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:733)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:544)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:143)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:690)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:616)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:818)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1626)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+2020-12-30_01:05:59.534 [RMI TCP Connection(3)-127.0.0.1] INFO  DBIProvider [DBIProvider.java:27] - Init jDBI with  JNDI
+2020-12-30_01:06:10.408 [http-nio-8080-exec-7] INFO  PayloadProcessor [PayloadProcessor.java:54] - Start processing with chunkSize=2
+2020-12-30_01:08:40.721 [http-nio-8080-exec-7] INFO  UploadServlet [UploadServlet.java:56] - null
+java.lang.NullPointerException: null
+	at ru.javaops.masterjava.upload.PayloadProcessor.process(PayloadProcessor.java:78)
+	at ru.javaops.masterjava.upload.UploadServlet.doPost(UploadServlet.java:46)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:652)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:733)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:544)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:143)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:690)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:616)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:818)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1626)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+2020-12-30_01:39:49.183 [RMI TCP Connection(3)-127.0.0.1] INFO  DBIProvider [DBIProvider.java:27] - Init jDBI with  JNDI
+2020-12-30_01:40:06.337 [http-nio-8080-exec-6] INFO  PayloadProcessor [PayloadProcessor.java:54] - Start processing with chunkSize=2
+2020-12-30_01:40:06.746 [http-nio-8080-exec-6] INFO  PayloadProcessor [PayloadProcessor.java:125] - Submit chunk: [gmail@gmail.com-admin@javaops.ru]
+2020-12-30_01:40:06.791 [http-nio-8080-exec-6] INFO  PayloadProcessor [PayloadProcessor.java:125] - Submit chunk: [deleted@yandex.ru-user1@gmail.com]
+2020-12-30_01:40:06.795 [http-nio-8080-exec-6] INFO  PayloadProcessor [PayloadProcessor.java:125] - Submit chunk: [user2@yandex.ru-user3@yandex.ru]
+2020-12-30_01:40:06.799 [http-nio-8080-exec-6] INFO  UploadServlet [UploadServlet.java:56] - City with short name srtv not found
+java.lang.IllegalStateException: City with short name srtv not found
+	at ru.javaops.masterjava.upload.PayloadProcessor.getCityByShortName(PayloadProcessor.java:116)
+	at ru.javaops.masterjava.upload.PayloadProcessor.process(PayloadProcessor.java:78)
+	at ru.javaops.masterjava.upload.UploadServlet.doPost(UploadServlet.java:46)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:652)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:733)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:544)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:143)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:690)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:616)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:818)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1626)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+2020-12-30_01:40:33.989 [http-nio-8080-exec-9] INFO  PayloadProcessor [PayloadProcessor.java:54] - Start processing with chunkSize=2
+2020-12-30_01:40:34.004 [http-nio-8080-exec-9] INFO  PayloadProcessor [PayloadProcessor.java:125] - Submit chunk: [gmail@gmail.com-admin@javaops.ru]
+2020-12-30_01:40:34.010 [http-nio-8080-exec-9] INFO  PayloadProcessor [PayloadProcessor.java:125] - Submit chunk: [deleted@yandex.ru-user1@gmail.com]
+2020-12-30_01:40:34.014 [http-nio-8080-exec-9] INFO  PayloadProcessor [PayloadProcessor.java:125] - Submit chunk: [user2@yandex.ru-user3@yandex.ru]
+2020-12-30_01:40:34.017 [http-nio-8080-exec-9] INFO  PayloadProcessor [PayloadProcessor.java:98] - [gmail@gmail.com-admin@javaops.ru] successfully executed with already presents: []
+2020-12-30_01:40:34.022 [http-nio-8080-exec-9] INFO  PayloadProcessor [PayloadProcessor.java:98] - [deleted@yandex.ru-user1@gmail.com] successfully executed with already presents: []
+2020-12-30_01:40:34.023 [http-nio-8080-exec-9] INFO  PayloadProcessor [PayloadProcessor.java:98] - [user2@yandex.ru-user3@yandex.ru] successfully executed with already presents: []
+2020-12-30_01:40:34.023 [http-nio-8080-exec-9] INFO  UploadServlet [UploadServlet.java:47] - Failed users: []

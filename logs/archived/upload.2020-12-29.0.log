@@ -1,0 +1,156 @@
+2020-12-29_04:54:56.068 [RMI TCP Connection(3)-127.0.0.1] INFO  DBIProvider [DBIProvider.java:27] - Init jDBI with  JNDI
+2020-12-29_05:05:18.929 [http-nio-8080-exec-1] INFO  UserProcessor [UserProcessor.java:51] - Start processing with chunkSize=2
+2020-12-29_05:05:19.029 [http-nio-8080-exec-1] INFO  UploadServlet [UploadServlet.java:58] - ParseError at [row,col]:[1,1]
+Message: Premature end of file.
+javax.xml.stream.XMLStreamException: ParseError at [row,col]:[1,1]
+Message: Premature end of file.
+	at com.sun.org.apache.xerces.internal.impl.XMLStreamReaderImpl.next(XMLStreamReaderImpl.java:604)
+	at ru.javaops.masterjava.xml.util.StaxStreamProcessor.doUntil(StaxStreamProcessor.java:49)
+	at ru.javaops.masterjava.upload.PayloadProcessor.process(UserProcessor.java:60)
+	at ru.javaops.masterjava.upload.UploadServlet.doPost(UploadServlet.java:48)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:652)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:733)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:544)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:143)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:690)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:616)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:818)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1626)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+2020-12-29_22:23:56.406 [RMI TCP Connection(3)-127.0.0.1] INFO  DBIProvider [DBIProvider.java:27] - Init jDBI with  JNDI
+2020-12-29_22:24:12.269 [http-nio-8080-exec-9] INFO  UserProcessor [UserProcessor.java:54] - Start processing with chunkSize=2
+2020-12-29_22:24:12.682 [http-nio-8080-exec-9] INFO  UploadServlet [UploadServlet.java:49] - Failed users: []
+2020-12-29_22:24:28.219 [http-nio-8080-exec-1] INFO  UserProcessor [UserProcessor.java:54] - Start processing with chunkSize=2
+2020-12-29_22:24:28.228 [http-nio-8080-exec-1] INFO  UploadServlet [UploadServlet.java:49] - Failed users: []
+2020-12-29_22:26:23.217 [http-nio-8080-exec-6] INFO  UserProcessor [UserProcessor.java:54] - Start processing with chunkSize=2
+2020-12-29_22:26:23.225 [http-nio-8080-exec-6] INFO  UploadServlet [UploadServlet.java:49] - Failed users: []
+2020-12-29_22:27:29.583 [RMI TCP Connection(3)-127.0.0.1] INFO  DBIProvider [DBIProvider.java:27] - Init jDBI with  JNDI
+2020-12-29_22:27:46.987 [http-nio-8080-exec-7] INFO  UserProcessor [UserProcessor.java:54] - Start processing with chunkSize=2
+2020-12-29_22:28:11.926 [http-nio-8080-exec-7] INFO  UploadServlet [UploadServlet.java:49] - Failed users: []
+2020-12-29_22:30:14.269 [RMI TCP Connection(3)-127.0.0.1] INFO  DBIProvider [DBIProvider.java:27] - Init jDBI with  JNDI
+2020-12-29_22:30:34.205 [http-nio-8080-exec-6] INFO  UserProcessor [UserProcessor.java:54] - Start processing with chunkSize=2
+2020-12-29_22:30:53.988 [http-nio-8080-exec-6] INFO  UploadServlet [UploadServlet.java:58] - null
+java.lang.NullPointerException: null
+	at ru.javaops.masterjava.upload.PayloadProcessor.process(UserProcessor.java:76)
+	at ru.javaops.masterjava.upload.UploadServlet.doPost(UploadServlet.java:48)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:652)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:733)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:544)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:143)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:690)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:616)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:818)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1626)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+2020-12-29_22:34:14.652 [RMI TCP Connection(3)-127.0.0.1] INFO  DBIProvider [DBIProvider.java:27] - Init jDBI with  JNDI
+2020-12-29_22:35:45.128 [http-nio-8080-exec-8] INFO  UserProcessor [UserProcessor.java:54] - Start processing with chunkSize=2
+2020-12-29_22:36:24.040 [http-nio-8080-exec-8] INFO  UploadServlet [UploadServlet.java:58] - city_id
+java.lang.NullPointerException: city_id
+	at ru.javaops.masterjava.persist.model.User.<init>(User.java:7)
+	at ru.javaops.masterjava.persist.model.User.<init>(User.java:22)
+	at ru.javaops.masterjava.upload.PayloadProcessor.process(UserProcessor.java:78)
+	at ru.javaops.masterjava.upload.UploadServlet.doPost(UploadServlet.java:48)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:652)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:733)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:544)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:143)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:690)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:616)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:818)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1626)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+2020-12-29_22:45:30.300 [RMI TCP Connection(3)-127.0.0.1] INFO  DBIProvider [DBIProvider.java:27] - Init jDBI with  JNDI
+2020-12-29_22:45:57.311 [RMI TCP Connection(3)-127.0.0.1] INFO  DBIProvider [DBIProvider.java:27] - Init jDBI with  JNDI
+2020-12-29_22:46:32.854 [http-nio-8080-exec-9] INFO  UserProcessor [UserProcessor.java:54] - Start processing with chunkSize=2
+2020-12-29_22:46:55.244 [http-nio-8080-exec-9] INFO  UserProcessor [UserProcessor.java:113] - Submit chunk: [gmail@gmail.com-admin@javaops.ru]
+2020-12-29_22:47:03.567 [http-nio-8080-exec-9] INFO  UserProcessor [UserProcessor.java:113] - Submit chunk: [deleted@yandex.ru-user1@gmail.com]
+2020-12-29_22:47:06.332 [http-nio-8080-exec-9] INFO  UserProcessor [UserProcessor.java:113] - Submit chunk: [user2@yandex.ru-user3@yandex.ru]
+2020-12-29_22:47:06.576 [http-nio-8080-exec-9] INFO  UserProcessor [UserProcessor.java:96] - [gmail@gmail.com-admin@javaops.ru] successfully executed with already presents: [gmail@gmail.com, admin@javaops.ru]
+2020-12-29_22:47:06.588 [http-nio-8080-exec-9] INFO  UserProcessor [UserProcessor.java:96] - [deleted@yandex.ru-user1@gmail.com] successfully executed with already presents: [deleted@yandex.ru, user1@gmail.com]
+2020-12-29_22:47:06.589 [http-nio-8080-exec-9] INFO  UserProcessor [UserProcessor.java:96] - [user2@yandex.ru-user3@yandex.ru] successfully executed with already presents: [user2@yandex.ru, user3@yandex.ru]
+2020-12-29_22:47:06.595 [http-nio-8080-exec-9] INFO  UploadServlet [UploadServlet.java:49] - Failed users: [[gmail@gmail.com, admin@javaops.ru, deleted@yandex.ru, user1@gmail.com, user2@yandex.ru, user3@yandex.ru] : already presents]
+2020-12-29_22:47:25.847 [http-nio-8080-exec-2] INFO  UserProcessor [UserProcessor.java:54] - Start processing with chunkSize=2
+2020-12-29_22:47:25.860 [http-nio-8080-exec-2] INFO  UserProcessor [UserProcessor.java:113] - Submit chunk: [gmail@gmail.com-admin@javaops.ru]
+2020-12-29_22:47:25.863 [http-nio-8080-exec-2] INFO  UserProcessor [UserProcessor.java:113] - Submit chunk: [deleted@yandex.ru-user1@gmail.com]
+2020-12-29_22:47:25.866 [http-nio-8080-exec-2] INFO  UserProcessor [UserProcessor.java:113] - Submit chunk: [user2@yandex.ru-user3@yandex.ru]
+2020-12-29_22:47:25.868 [http-nio-8080-exec-2] INFO  UserProcessor [UserProcessor.java:96] - [gmail@gmail.com-admin@javaops.ru] successfully executed with already presents: [gmail@gmail.com, admin@javaops.ru]
+2020-12-29_22:47:25.868 [http-nio-8080-exec-2] INFO  UserProcessor [UserProcessor.java:96] - [deleted@yandex.ru-user1@gmail.com] successfully executed with already presents: [deleted@yandex.ru, user1@gmail.com]
+2020-12-29_22:47:25.868 [http-nio-8080-exec-2] INFO  UserProcessor [UserProcessor.java:96] - [user2@yandex.ru-user3@yandex.ru] successfully executed with already presents: [user2@yandex.ru, user3@yandex.ru]
+2020-12-29_22:47:25.869 [http-nio-8080-exec-2] INFO  UploadServlet [UploadServlet.java:49] - Failed users: [[gmail@gmail.com, admin@javaops.ru, deleted@yandex.ru, user1@gmail.com, user2@yandex.ru, user3@yandex.ru] : already presents]
+2020-12-29_22:58:02.955 [http-nio-8080-exec-6] INFO  UserProcessor [UserProcessor.java:54] - Start processing with chunkSize=2
+2020-12-29_22:58:02.966 [http-nio-8080-exec-6] INFO  UserProcessor [UserProcessor.java:113] - Submit chunk: [gmail@gmail.com-admin@javaops.ru]
+2020-12-29_22:58:02.969 [http-nio-8080-exec-6] INFO  UserProcessor [UserProcessor.java:113] - Submit chunk: [deleted@yandex.ru-user1@gmail.com]
+2020-12-29_22:58:02.971 [http-nio-8080-exec-6] INFO  UserProcessor [UserProcessor.java:113] - Submit chunk: [user2@yandex.ru-user3@yandex.ru]
+2020-12-29_22:58:02.973 [http-nio-8080-exec-6] INFO  UserProcessor [UserProcessor.java:96] - [gmail@gmail.com-admin@javaops.ru] successfully executed with already presents: [gmail@gmail.com, admin@javaops.ru]
+2020-12-29_22:58:02.973 [http-nio-8080-exec-6] INFO  UserProcessor [UserProcessor.java:96] - [deleted@yandex.ru-user1@gmail.com] successfully executed with already presents: [deleted@yandex.ru, user1@gmail.com]
+2020-12-29_22:58:02.974 [http-nio-8080-exec-6] INFO  UserProcessor [UserProcessor.java:96] - [user2@yandex.ru-user3@yandex.ru] successfully executed with already presents: [user2@yandex.ru, user3@yandex.ru]
+2020-12-29_22:58:02.974 [http-nio-8080-exec-6] INFO  UploadServlet [UploadServlet.java:49] - Failed users: [[gmail@gmail.com, admin@javaops.ru, deleted@yandex.ru, user1@gmail.com, user2@yandex.ru, user3@yandex.ru] : already presents]
+2020-12-29_22:58:24.025 [http-nio-8080-exec-9] INFO  UserProcessor [UserProcessor.java:54] - Start processing with chunkSize=2
+2020-12-29_22:58:24.035 [http-nio-8080-exec-9] INFO  UserProcessor [UserProcessor.java:113] - Submit chunk: [gmail@gmail.com-admin@javaops.ru]
+2020-12-29_22:58:24.038 [http-nio-8080-exec-9] INFO  UserProcessor [UserProcessor.java:113] - Submit chunk: [deleted@yandex.ru-user1@gmail.com]
+2020-12-29_22:58:24.040 [http-nio-8080-exec-9] INFO  UserProcessor [UserProcessor.java:113] - Submit chunk: [user2@yandex.ru-user3@yandex.ru]
+2020-12-29_22:58:24.042 [http-nio-8080-exec-9] INFO  UserProcessor [UserProcessor.java:96] - [gmail@gmail.com-admin@javaops.ru] successfully executed with already presents: [gmail@gmail.com, admin@javaops.ru]
+2020-12-29_22:58:24.042 [http-nio-8080-exec-9] INFO  UserProcessor [UserProcessor.java:96] - [deleted@yandex.ru-user1@gmail.com] successfully executed with already presents: [deleted@yandex.ru, user1@gmail.com]
+2020-12-29_22:58:24.042 [http-nio-8080-exec-9] INFO  UserProcessor [UserProcessor.java:96] - [user2@yandex.ru-user3@yandex.ru] successfully executed with already presents: [user2@yandex.ru, user3@yandex.ru]
+2020-12-29_22:58:24.042 [http-nio-8080-exec-9] INFO  UploadServlet [UploadServlet.java:49] - Failed users: [[gmail@gmail.com, admin@javaops.ru, deleted@yandex.ru, user1@gmail.com, user2@yandex.ru, user3@yandex.ru] : already presents]
+2020-12-29_22:59:08.159 [http-nio-8080-exec-4] INFO  UserProcessor [UserProcessor.java:54] - Start processing with chunkSize=2
+2020-12-29_22:59:08.168 [http-nio-8080-exec-4] INFO  UserProcessor [UserProcessor.java:113] - Submit chunk: [gmail@gmail.com-admin@javaops.ru]
+2020-12-29_22:59:08.170 [http-nio-8080-exec-4] INFO  UserProcessor [UserProcessor.java:113] - Submit chunk: [deleted@yandex.ru-user1@gmail.com]
+2020-12-29_22:59:08.173 [http-nio-8080-exec-4] INFO  UserProcessor [UserProcessor.java:113] - Submit chunk: [user2@yandex.ru-user3@yandex.ru]
+2020-12-29_22:59:08.175 [http-nio-8080-exec-4] INFO  UserProcessor [UserProcessor.java:96] - [gmail@gmail.com-admin@javaops.ru] successfully executed with already presents: []
+2020-12-29_22:59:08.175 [http-nio-8080-exec-4] INFO  UserProcessor [UserProcessor.java:96] - [deleted@yandex.ru-user1@gmail.com] successfully executed with already presents: []
+2020-12-29_22:59:08.175 [http-nio-8080-exec-4] INFO  UserProcessor [UserProcessor.java:96] - [user2@yandex.ru-user3@yandex.ru] successfully executed with already presents: []
+2020-12-29_22:59:08.175 [http-nio-8080-exec-4] INFO  UploadServlet [UploadServlet.java:49] - Failed users: []
+2020-12-29_22:59:22.046 [http-nio-8080-exec-6] INFO  UserProcessor [UserProcessor.java:54] - Start processing with chunkSize=2
+2020-12-29_22:59:22.054 [http-nio-8080-exec-6] INFO  UserProcessor [UserProcessor.java:113] - Submit chunk: [gmail@gmail.com-admin@javaops.ru]
+2020-12-29_22:59:22.056 [http-nio-8080-exec-6] INFO  UserProcessor [UserProcessor.java:113] - Submit chunk: [deleted@yandex.ru-user1@gmail.com]
+2020-12-29_22:59:22.058 [http-nio-8080-exec-6] INFO  UserProcessor [UserProcessor.java:113] - Submit chunk: [user2@yandex.ru-user3@yandex.ru]
+2020-12-29_22:59:22.060 [http-nio-8080-exec-6] INFO  UserProcessor [UserProcessor.java:96] - [gmail@gmail.com-admin@javaops.ru] successfully executed with already presents: [gmail@gmail.com, admin@javaops.ru]
+2020-12-29_22:59:22.060 [http-nio-8080-exec-6] INFO  UserProcessor [UserProcessor.java:96] - [deleted@yandex.ru-user1@gmail.com] successfully executed with already presents: [deleted@yandex.ru, user1@gmail.com]
+2020-12-29_22:59:22.060 [http-nio-8080-exec-6] INFO  UserProcessor [UserProcessor.java:96] - [user2@yandex.ru-user3@yandex.ru] successfully executed with already presents: [user2@yandex.ru, user3@yandex.ru]
+2020-12-29_22:59:22.061 [http-nio-8080-exec-6] INFO  UploadServlet [UploadServlet.java:49] - Failed users: [[gmail@gmail.com, admin@javaops.ru, deleted@yandex.ru, user1@gmail.com, user2@yandex.ru, user3@yandex.ru] : already presents]

@@ -1,0 +1,388 @@
+2021-02-23_14:23:51.810 [RMI TCP Connection(3)-127.0.0.1] INFO  DBIProvider [DBIProvider.java:27] - Init jDBI with  JNDI
+2021-02-23_14:24:33.777 [http-nio-8080-exec-2] INFO  ProjectGroupProcessor [ProjectGroupProcessor.java:50] - Insert batch [Group(super=BaseEntity(id=null), name=topjava06, type=FINISHED, projectId=100645), Group(super=BaseEntity(id=null), name=topjava07, type=FINISHED, projectId=100645), Group(super=BaseEntity(id=null), name=topjava08, type=CURRENT, projectId=100645), Group(super=BaseEntity(id=null), name=masterjava01, type=CURRENT, projectId=100646)]
+2021-02-23_14:24:33.833 [http-nio-8080-exec-2] INFO  CityProcessor [CityProcessor.java:28] - Insert batch []
+2021-02-23_14:24:33.835 [http-nio-8080-exec-2] INFO  UserProcessor [UserProcessor.java:43] - Start processing with chunkSize=2000
+2021-02-23_14:24:33.896 [http-nio-8080-exec-2] INFO  UploadServlet [UploadServlet.java:46] - Failed users: []
+2021-02-23_14:28:00.135 [RMI TCP Connection(3)-127.0.0.1] INFO  DBIProvider [DBIProvider.java:27] - Init jDBI with  JNDI
+2021-02-23_14:28:08.850 [http-nio-8080-exec-7] INFO  ProjectGroupProcessor [ProjectGroupProcessor.java:50] - Insert batch [Group(super=BaseEntity(id=null), name=topjava06, type=FINISHED, projectId=100651), Group(super=BaseEntity(id=null), name=topjava07, type=FINISHED, projectId=100651), Group(super=BaseEntity(id=null), name=topjava08, type=CURRENT, projectId=100651), Group(super=BaseEntity(id=null), name=masterjava01, type=CURRENT, projectId=100652)]
+2021-02-23_14:28:08.918 [http-nio-8080-exec-7] INFO  CityProcessor [CityProcessor.java:28] - Insert batch []
+2021-02-23_14:29:06.927 [http-nio-8080-exec-7] INFO  UserProcessor [UserProcessor.java:43] - Start processing with chunkSize=2000
+2021-02-23_14:32:13.961 [http-nio-8080-exec-7] INFO  UploadServlet [UploadServlet.java:46] - Failed users: []
+2021-02-23_14:34:31.479 [RMI TCP Connection(3)-127.0.0.1] INFO  DBIProvider [DBIProvider.java:27] - Init jDBI with  JNDI
+2021-02-23_14:38:51.902 [RMI TCP Connection(3)-127.0.0.1] INFO  DBIProvider [DBIProvider.java:27] - Init jDBI with  JNDI
+2021-02-23_14:40:31.885 [http-nio-8080-exec-7] INFO  ProjectGroupProcessor [ProjectGroupProcessor.java:50] - Insert batch [Group(super=BaseEntity(id=null), name=topjava06, type=FINISHED, projectId=100657), Group(super=BaseEntity(id=null), name=topjava07, type=FINISHED, projectId=100657), Group(super=BaseEntity(id=null), name=topjava08, type=CURRENT, projectId=100657), Group(super=BaseEntity(id=null), name=masterjava01, type=CURRENT, projectId=100658)]
+2021-02-23_14:41:05.992 [http-nio-8080-exec-7] INFO  CityProcessor [CityProcessor.java:28] - Insert batch []
+2021-02-23_14:41:55.618 [http-nio-8080-exec-7] INFO  UserProcessor [UserProcessor.java:43] - Start processing with chunkSize=2000
+2021-02-23_14:42:00.153 [http-nio-8080-exec-7] INFO  UploadServlet [UploadServlet.java:46] - Failed users: []
+2021-02-23_15:11:02.023 [RMI TCP Connection(5)-127.0.0.1] INFO  DBIProvider [DBIProvider.java:27] - Init jDBI with  JNDI
+2021-02-23_15:11:16.378 [http-nio-8080-exec-7] INFO  ProjectGroupProcessor [ProjectGroupProcessor.java:51] - Insert batch [Group(super=BaseEntity(id=null), name=topjava06, type=FINISHED, projectId=100686), Group(super=BaseEntity(id=null), name=topjava07, type=FINISHED, projectId=100686), Group(super=BaseEntity(id=null), name=topjava08, type=CURRENT, projectId=100686), Group(super=BaseEntity(id=null), name=masterjava01, type=CURRENT, projectId=100687)]
+2021-02-23_15:11:16.432 [http-nio-8080-exec-7] INFO  CityProcessor [CityProcessor.java:28] - Insert batch [City(super=RefEntity(ref=spb), name=Санкт-Петербург), City(super=RefEntity(ref=mow), name=Москва), City(super=RefEntity(ref=kiv), name=Киев), City(super=RefEntity(ref=mnsk), name=Минск)]
+2021-02-23_15:11:16.440 [http-nio-8080-exec-7] INFO  UserProcessor [UserProcessor.java:43] - Start processing with chunkSize=2000
+2021-02-23_15:11:16.509 [http-nio-8080-exec-7] INFO  UploadServlet [UploadServlet.java:55] - null
+java.lang.NullPointerException: null
+	at ru.javaops.masterjava.upload.UserProcessor.process(UserProcessor.java:55)
+	at ru.javaops.masterjava.upload.PayloadProcessor.process(PayloadProcessor.java:33)
+	at ru.javaops.masterjava.upload.UploadServlet.doPost(UploadServlet.java:45)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:652)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:733)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:544)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:143)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:690)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:616)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:818)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1626)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+2021-02-23_15:15:10.810 [RMI TCP Connection(3)-127.0.0.1] INFO  DBIProvider [DBIProvider.java:27] - Init jDBI with  JNDI
+2021-02-23_15:15:50.921 [http-nio-8080-exec-7] INFO  ProjectGroupProcessor [ProjectGroupProcessor.java:51] - Insert batch [Group(super=BaseEntity(id=null), name=topjava06, type=FINISHED, projectId=100692), Group(super=BaseEntity(id=null), name=topjava07, type=FINISHED, projectId=100692), Group(super=BaseEntity(id=null), name=topjava08, type=CURRENT, projectId=100692), Group(super=BaseEntity(id=null), name=masterjava01, type=CURRENT, projectId=100693)]
+2021-02-23_15:16:16.529 [http-nio-8080-exec-7] INFO  CityProcessor [CityProcessor.java:28] - Insert batch [City(super=RefEntity(ref=spb), name=Санкт-Петербург), City(super=RefEntity(ref=mow), name=Москва), City(super=RefEntity(ref=kiv), name=Киев), City(super=RefEntity(ref=mnsk), name=Минск)]
+2021-02-23_15:16:30.424 [http-nio-8080-exec-7] INFO  UserProcessor [UserProcessor.java:43] - Start processing with chunkSize=2000
+2021-02-23_15:19:02.217 [http-nio-8080-exec-7] INFO  UploadServlet [UploadServlet.java:55] - null
+java.lang.NullPointerException: null
+	at ru.javaops.masterjava.upload.UserProcessor.process(UserProcessor.java:55)
+	at ru.javaops.masterjava.upload.PayloadProcessor.process(PayloadProcessor.java:33)
+	at ru.javaops.masterjava.upload.UploadServlet.doPost(UploadServlet.java:45)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:652)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:733)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:544)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:143)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:690)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:616)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:818)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1626)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+2021-02-23_15:31:04.249 [RMI TCP Connection(3)-127.0.0.1] INFO  DBIProvider [DBIProvider.java:27] - Init jDBI with  JNDI
+2021-02-23_15:31:14.141 [http-nio-8080-exec-7] INFO  UploadServlet [UploadServlet.java:55] - org.postgresql.util.PSQLException: ОШИБКА: повторяющееся значение ключа нарушает ограничение уникальности "project_name_key"
+  Подробности: Ключ "(name)=(topjava)" уже существует. [statement:"INSERT INTO project (name, description)  VALUES (:name, :description)", located:"INSERT INTO project (name, description)  VALUES (:name, :description)", rewritten:"INSERT INTO project (name, description)  VALUES (?, ?)", arguments:{ positional:{}, named:{new:true,name:'topjava',description:'Topjava',id:null,class:class ru.javaops.masterjava.persist.model.Project}, finder:[]}]
+org.skife.jdbi.v2.exceptions.UnableToExecuteStatementException: org.postgresql.util.PSQLException: ОШИБКА: повторяющееся значение ключа нарушает ограничение уникальности "project_name_key"
+  Подробности: Ключ "(name)=(topjava)" уже существует. [statement:"INSERT INTO project (name, description)  VALUES (:name, :description)", located:"INSERT INTO project (name, description)  VALUES (:name, :description)", rewritten:"INSERT INTO project (name, description)  VALUES (?, ?)", arguments:{ positional:{}, named:{new:true,name:'topjava',description:'Topjava',id:null,class:class ru.javaops.masterjava.persist.model.Project}, finder:[]}]
+	at org.skife.jdbi.v2.SQLStatement.internalExecute(SQLStatement.java:1338)
+	at org.skife.jdbi.v2.Update.executeAndReturnGeneratedKeys(Update.java:82)
+	at org.skife.jdbi.v2.sqlobject.UpdateHandler$1.value(UpdateHandler.java:56)
+	at org.skife.jdbi.v2.sqlobject.UpdateHandler.invoke(UpdateHandler.java:79)
+	at org.skife.jdbi.v2.sqlobject.SqlObject.invoke(SqlObject.java:224)
+	at org.skife.jdbi.v2.sqlobject.SqlObject$3.intercept(SqlObject.java:133)
+	at ru.javaops.masterjava.persist.dao.ProjectDao$$EnhancerByCGLIB$$5fbdefbd.insertGeneratedId(<generated>)
+	at ru.javaops.masterjava.persist.dao.ProjectDao.insert(ProjectDao.java:34)
+	at ru.javaops.masterjava.persist.dao.ProjectDao$$EnhancerByCGLIB$$5fbdefbd.CGLIB$insert$1(<generated>)
+	at ru.javaops.masterjava.persist.dao.ProjectDao$$EnhancerByCGLIB$$5fbdefbd$$FastClassByCGLIB$$4944a20c.invoke(<generated>)
+	at org.skife.jdbi.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:228)
+	at org.skife.jdbi.v2.sqlobject.PassThroughHandler.invoke(PassThroughHandler.java:34)
+	at org.skife.jdbi.v2.sqlobject.SqlObject.invoke(SqlObject.java:224)
+	at org.skife.jdbi.v2.sqlobject.SqlObject$3.intercept(SqlObject.java:133)
+	at ru.javaops.masterjava.persist.dao.ProjectDao$$EnhancerByCGLIB$$5fbdefbd.insert(<generated>)
+	at ru.javaops.masterjava.upload.ProjectGroupProcessor.process(ProjectGroupProcessor.java:37)
+	at ru.javaops.masterjava.upload.PayloadProcessor.process(PayloadProcessor.java:31)
+	at ru.javaops.masterjava.upload.UploadServlet.doPost(UploadServlet.java:45)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:652)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:733)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:544)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:143)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:690)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:616)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:818)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1626)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: org.postgresql.util.PSQLException: ОШИБКА: повторяющееся значение ключа нарушает ограничение уникальности "project_name_key"
+  Подробности: Ключ "(name)=(topjava)" уже существует.
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2477)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2190)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:300)
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:428)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:354)
+	at org.postgresql.jdbc.PgPreparedStatement.executeWithFlags(PgPreparedStatement.java:169)
+	at org.postgresql.jdbc.PgPreparedStatement.execute(PgPreparedStatement.java:158)
+	at org.apache.tomcat.dbcp.dbcp2.DelegatingPreparedStatement.execute(DelegatingPreparedStatement.java:93)
+	at org.apache.tomcat.dbcp.dbcp2.DelegatingPreparedStatement.execute(DelegatingPreparedStatement.java:93)
+	at org.skife.jdbi.v2.SQLStatement.internalExecute(SQLStatement.java:1327)
+	... 41 common frames omitted
+2021-02-23_15:32:27.118 [http-nio-8080-exec-10] INFO  ProjectGroupProcessor [ProjectGroupProcessor.java:51] - Insert batch [Group(super=BaseEntity(id=null), name=topjava06, type=FINISHED, projectId=100722), Group(super=BaseEntity(id=null), name=topjava07, type=FINISHED, projectId=100722), Group(super=BaseEntity(id=null), name=topjava08, type=CURRENT, projectId=100722), Group(super=BaseEntity(id=null), name=masterjava01, type=CURRENT, projectId=100723)]
+2021-02-23_15:32:27.183 [http-nio-8080-exec-10] INFO  CityProcessor [CityProcessor.java:28] - Insert batch [City(super=RefEntity(ref=spb), name=Санкт-Петербург), City(super=RefEntity(ref=mow), name=Москва), City(super=RefEntity(ref=kiv), name=Киев), City(super=RefEntity(ref=mnsk), name=Минск)]
+2021-02-23_15:32:27.191 [http-nio-8080-exec-10] INFO  UserProcessor [UserProcessor.java:43] - Start processing with chunkSize=2000
+2021-02-23_15:32:27.259 [http-nio-8080-exec-10] INFO  UserProcessor [UserProcessor.java:105] - Submit chunk: [gmail@gmail.com-user3@yandex.ru]
+2021-02-23_15:32:27.294 [http-nio-8080-exec-10] INFO  UserProcessor [UserProcessor.java:87] - [gmail@gmail.com-user3@yandex.ru] successfully executed with already presents: []
+2021-02-23_15:32:27.304 [http-nio-8080-exec-10] INFO  UploadServlet [UploadServlet.java:46] - Failed users: []
+2021-02-23_15:39:04.527 [http-nio-8080-exec-6] INFO  UploadServlet [UploadServlet.java:55] - org.postgresql.util.PSQLException: ОШИБКА: повторяющееся значение ключа нарушает ограничение уникальности "project_name_key"
+  Подробности: Ключ "(name)=(topjava)" уже существует. [statement:"INSERT INTO project (name, description)  VALUES (:name, :description)", located:"INSERT INTO project (name, description)  VALUES (:name, :description)", rewritten:"INSERT INTO project (name, description)  VALUES (?, ?)", arguments:{ positional:{}, named:{new:true,name:'topjava',description:'Topjava',id:null,class:class ru.javaops.masterjava.persist.model.Project}, finder:[]}]
+org.skife.jdbi.v2.exceptions.UnableToExecuteStatementException: org.postgresql.util.PSQLException: ОШИБКА: повторяющееся значение ключа нарушает ограничение уникальности "project_name_key"
+  Подробности: Ключ "(name)=(topjava)" уже существует. [statement:"INSERT INTO project (name, description)  VALUES (:name, :description)", located:"INSERT INTO project (name, description)  VALUES (:name, :description)", rewritten:"INSERT INTO project (name, description)  VALUES (?, ?)", arguments:{ positional:{}, named:{new:true,name:'topjava',description:'Topjava',id:null,class:class ru.javaops.masterjava.persist.model.Project}, finder:[]}]
+	at org.skife.jdbi.v2.SQLStatement.internalExecute(SQLStatement.java:1338)
+	at org.skife.jdbi.v2.Update.executeAndReturnGeneratedKeys(Update.java:82)
+	at org.skife.jdbi.v2.sqlobject.UpdateHandler$1.value(UpdateHandler.java:56)
+	at org.skife.jdbi.v2.sqlobject.UpdateHandler.invoke(UpdateHandler.java:79)
+	at org.skife.jdbi.v2.sqlobject.SqlObject.invoke(SqlObject.java:224)
+	at org.skife.jdbi.v2.sqlobject.SqlObject$3.intercept(SqlObject.java:133)
+	at ru.javaops.masterjava.persist.dao.ProjectDao$$EnhancerByCGLIB$$5fbdefbd.insertGeneratedId(<generated>)
+	at ru.javaops.masterjava.persist.dao.ProjectDao.insert(ProjectDao.java:34)
+	at ru.javaops.masterjava.persist.dao.ProjectDao$$EnhancerByCGLIB$$5fbdefbd.CGLIB$insert$1(<generated>)
+	at ru.javaops.masterjava.persist.dao.ProjectDao$$EnhancerByCGLIB$$5fbdefbd$$FastClassByCGLIB$$4944a20c.invoke(<generated>)
+	at org.skife.jdbi.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:228)
+	at org.skife.jdbi.v2.sqlobject.PassThroughHandler.invoke(PassThroughHandler.java:34)
+	at org.skife.jdbi.v2.sqlobject.SqlObject.invoke(SqlObject.java:224)
+	at org.skife.jdbi.v2.sqlobject.SqlObject$3.intercept(SqlObject.java:133)
+	at ru.javaops.masterjava.persist.dao.ProjectDao$$EnhancerByCGLIB$$5fbdefbd.insert(<generated>)
+	at ru.javaops.masterjava.upload.ProjectGroupProcessor.process(ProjectGroupProcessor.java:37)
+	at ru.javaops.masterjava.upload.PayloadProcessor.process(PayloadProcessor.java:31)
+	at ru.javaops.masterjava.upload.UploadServlet.doPost(UploadServlet.java:45)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:652)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:733)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:544)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:143)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:690)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:616)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:818)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1626)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: org.postgresql.util.PSQLException: ОШИБКА: повторяющееся значение ключа нарушает ограничение уникальности "project_name_key"
+  Подробности: Ключ "(name)=(topjava)" уже существует.
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2477)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2190)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:300)
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:428)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:354)
+	at org.postgresql.jdbc.PgPreparedStatement.executeWithFlags(PgPreparedStatement.java:169)
+	at org.postgresql.jdbc.PgPreparedStatement.execute(PgPreparedStatement.java:158)
+	at org.apache.tomcat.dbcp.dbcp2.DelegatingPreparedStatement.execute(DelegatingPreparedStatement.java:93)
+	at org.apache.tomcat.dbcp.dbcp2.DelegatingPreparedStatement.execute(DelegatingPreparedStatement.java:93)
+	at org.skife.jdbi.v2.SQLStatement.internalExecute(SQLStatement.java:1327)
+	... 41 common frames omitted
+2021-02-23_15:40:28.085 [http-nio-8080-exec-9] INFO  ProjectGroupProcessor [ProjectGroupProcessor.java:51] - Insert batch [Group(super=BaseEntity(id=null), name=topjava06, type=FINISHED, projectId=100729), Group(super=BaseEntity(id=null), name=topjava07, type=FINISHED, projectId=100729), Group(super=BaseEntity(id=null), name=topjava08, type=CURRENT, projectId=100729), Group(super=BaseEntity(id=null), name=masterjava01, type=CURRENT, projectId=100730)]
+2021-02-23_15:40:28.092 [http-nio-8080-exec-9] INFO  CityProcessor [CityProcessor.java:28] - Insert batch [City(super=RefEntity(ref=spb), name=Санкт-Петербург), City(super=RefEntity(ref=mow), name=Москва), City(super=RefEntity(ref=kiv), name=Киев), City(super=RefEntity(ref=mnsk), name=Минск)]
+2021-02-23_15:40:28.096 [http-nio-8080-exec-9] INFO  UserProcessor [UserProcessor.java:43] - Start processing with chunkSize=2000
+2021-02-23_15:40:28.104 [http-nio-8080-exec-9] INFO  UserProcessor [UserProcessor.java:105] - Submit chunk: [gmail@gmail.com-user3@yandex.ru]
+2021-02-23_15:40:28.109 [http-nio-8080-exec-9] INFO  UserProcessor [UserProcessor.java:87] - [gmail@gmail.com-user3@yandex.ru] successfully executed with already presents: []
+2021-02-23_15:40:28.112 [http-nio-8080-exec-9] INFO  UploadServlet [UploadServlet.java:46] - Failed users: [user1@gmail.com : Group 'masterjava99' is not present in DB]
+2021-02-23_15:44:52.270 [RMI TCP Connection(3)-127.0.0.1] INFO  DBIProvider [DBIProvider.java:27] - Init jDBI with  JNDI
+2021-02-23_15:45:31.964 [http-nio-8080-exec-8] INFO  ProjectGroupProcessor [ProjectGroupProcessor.java:50] - Insert batch [Group(super=BaseEntity(id=null), name=topjava06, type=FINISHED, projectId=0), Group(super=BaseEntity(id=null), name=topjava07, type=FINISHED, projectId=0), Group(super=BaseEntity(id=null), name=topjava08, type=CURRENT, projectId=0), Group(super=BaseEntity(id=null), name=masterjava01, type=CURRENT, projectId=0)]
+2021-02-23_15:45:32.018 [http-nio-8080-exec-8] INFO  CityProcessor [CityProcessor.java:28] - Insert batch []
+2021-02-23_15:45:32.020 [http-nio-8080-exec-8] INFO  UserProcessor [UserProcessor.java:43] - Start processing with chunkSize=2000
+2021-02-23_15:45:32.088 [http-nio-8080-exec-8] INFO  UserProcessor [UserProcessor.java:105] - Submit chunk: [gmail@gmail.com-user3@yandex.ru]
+2021-02-23_15:45:32.113 [http-nio-8080-exec-8] INFO  UserProcessor [UserProcessor.java:87] - [gmail@gmail.com-user3@yandex.ru] successfully executed with already presents: [gmail@gmail.com, admin@javaops.ru, deleted@yandex.ru, user1@gmail.com, user2@yandex.ru, user3@yandex.ru]
+2021-02-23_15:45:32.155 [http-nio-8080-exec-8] INFO  UploadServlet [UploadServlet.java:55] - java.sql.BatchUpdateException: Batch entry 0 INSERT INTO user_group (user_id, group_id) VALUES (116534, 100746) ON CONFLICT DO NOTHING was aborted: ОШИБКА: INSERT или UPDATE в таблице "user_group" нарушает ограничение внешнего ключа "user_group_user_id_fkey"
+  Подробности: Ключ (user_id)=(116534) отсутствует в таблице "users".  Call getNextException to see other errors in the batch. [statement:"INSERT INTO user_group (user_id, group_id) VALUES (:userId, :groupId) ON CONFLICT DO NOTHING", located:"null", rewritten:"null", arguments:{ positional:{}, named:{groupId:100748,class:class ru.javaops.masterjava.persist.model.UserGroup,userId:116539}, finder:[]}]
+org.skife.jdbi.v2.exceptions.UnableToExecuteStatementException: java.sql.BatchUpdateException: Batch entry 0 INSERT INTO user_group (user_id, group_id) VALUES (116534, 100746) ON CONFLICT DO NOTHING was aborted: ОШИБКА: INSERT или UPDATE в таблице "user_group" нарушает ограничение внешнего ключа "user_group_user_id_fkey"
+  Подробности: Ключ (user_id)=(116534) отсутствует в таблице "users".  Call getNextException to see other errors in the batch. [statement:"INSERT INTO user_group (user_id, group_id) VALUES (:userId, :groupId) ON CONFLICT DO NOTHING", located:"null", rewritten:"null", arguments:{ positional:{}, named:{groupId:100748,class:class ru.javaops.masterjava.persist.model.UserGroup,userId:116539}, finder:[]}]
+	at org.skife.jdbi.v2.PreparedBatch.internalBatchExecute(PreparedBatch.java:206)
+	at org.skife.jdbi.v2.PreparedBatch.execute(PreparedBatch.java:100)
+	at org.skife.jdbi.v2.sqlobject.BatchHandler$1.value(BatchHandler.java:65)
+	at org.skife.jdbi.v2.sqlobject.BatchHandler$5.inTransaction(BatchHandler.java:231)
+	at org.skife.jdbi.v2.sqlobject.BatchHandler$5.inTransaction(BatchHandler.java:227)
+	at org.skife.jdbi.v2.tweak.transactions.LocalTransactionHandler.inTransaction(LocalTransactionHandler.java:183)
+	at org.skife.jdbi.v2.BasicHandle.inTransaction(BasicHandle.java:338)
+	at org.skife.jdbi.v2.sqlobject.BatchHandler.executeBatch(BatchHandler.java:226)
+	at org.skife.jdbi.v2.sqlobject.BatchHandler.invoke(BatchHandler.java:204)
+	at org.skife.jdbi.v2.sqlobject.SqlObject.invoke(SqlObject.java:224)
+	at org.skife.jdbi.v2.sqlobject.SqlObject$3.intercept(SqlObject.java:133)
+	at ru.javaops.masterjava.persist.dao.UserGroupDao$$EnhancerByCGLIB$$2aa14c43.insertBatch(<generated>)
+	at ru.javaops.masterjava.upload.UserProcessor.process(UserProcessor.java:94)
+	at ru.javaops.masterjava.upload.PayloadProcessor.process(PayloadProcessor.java:33)
+	at ru.javaops.masterjava.upload.UploadServlet.doPost(UploadServlet.java:45)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:652)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:733)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:544)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:143)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:690)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:616)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:818)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1626)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.sql.BatchUpdateException: Batch entry 0 INSERT INTO user_group (user_id, group_id) VALUES (116534, 100746) ON CONFLICT DO NOTHING was aborted: ОШИБКА: INSERT или UPDATE в таблице "user_group" нарушает ограничение внешнего ключа "user_group_user_id_fkey"
+  Подробности: Ключ (user_id)=(116534) отсутствует в таблице "users".  Call getNextException to see other errors in the batch.
+	at org.postgresql.jdbc.BatchResultHandler.handleError(BatchResultHandler.java:148)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2191)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:472)
+	at org.postgresql.jdbc.PgStatement.executeBatch(PgStatement.java:791)
+	at org.postgresql.jdbc.PgPreparedStatement.executeBatch(PgPreparedStatement.java:1563)
+	at org.apache.tomcat.dbcp.dbcp2.DelegatingStatement.executeBatch(DelegatingStatement.java:242)
+	at org.apache.tomcat.dbcp.dbcp2.DelegatingStatement.executeBatch(DelegatingStatement.java:242)
+	at org.skife.jdbi.v2.PreparedBatch.internalBatchExecute(PreparedBatch.java:196)
+	... 38 common frames omitted
+Caused by: org.postgresql.util.PSQLException: ОШИБКА: INSERT или UPDATE в таблице "user_group" нарушает ограничение внешнего ключа "user_group_user_id_fkey"
+  Подробности: Ключ (user_id)=(116534) отсутствует в таблице "users".
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2477)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2190)
+	... 44 common frames omitted
+2021-02-23_15:46:47.500 [http-nio-8080-exec-1] INFO  ProjectGroupProcessor [ProjectGroupProcessor.java:50] - Insert batch [Group(super=BaseEntity(id=null), name=topjava06, type=FINISHED, projectId=100764), Group(super=BaseEntity(id=null), name=topjava07, type=FINISHED, projectId=100764), Group(super=BaseEntity(id=null), name=topjava08, type=CURRENT, projectId=100764), Group(super=BaseEntity(id=null), name=masterjava01, type=CURRENT, projectId=100765)]
+2021-02-23_15:46:47.508 [http-nio-8080-exec-1] INFO  CityProcessor [CityProcessor.java:28] - Insert batch [City(super=RefEntity(ref=spb), name=Санкт-Петербург), City(super=RefEntity(ref=mow), name=Москва), City(super=RefEntity(ref=kiv), name=Киев), City(super=RefEntity(ref=mnsk), name=Минск)]
+2021-02-23_15:46:47.520 [http-nio-8080-exec-1] INFO  UserProcessor [UserProcessor.java:43] - Start processing with chunkSize=2000
+2021-02-23_15:46:47.525 [http-nio-8080-exec-1] INFO  UserProcessor [UserProcessor.java:105] - Submit chunk: [gmail@gmail.com-user3@yandex.ru]
+2021-02-23_15:46:47.530 [http-nio-8080-exec-1] INFO  UserProcessor [UserProcessor.java:87] - [gmail@gmail.com-user3@yandex.ru] successfully executed with already presents: []
+2021-02-23_15:46:47.534 [http-nio-8080-exec-1] INFO  UploadServlet [UploadServlet.java:46] - Failed users: []
+2021-02-23_15:48:41.844 [http-nio-8080-exec-5] INFO  ProjectGroupProcessor [ProjectGroupProcessor.java:50] - Insert batch [Group(super=BaseEntity(id=null), name=topjava06, type=FINISHED, projectId=0), Group(super=BaseEntity(id=null), name=topjava07, type=FINISHED, projectId=0), Group(super=BaseEntity(id=null), name=topjava08, type=CURRENT, projectId=0), Group(super=BaseEntity(id=null), name=masterjava01, type=CURRENT, projectId=0)]
+2021-02-23_15:48:41.848 [http-nio-8080-exec-5] INFO  CityProcessor [CityProcessor.java:28] - Insert batch []
+2021-02-23_15:48:41.849 [http-nio-8080-exec-5] INFO  UserProcessor [UserProcessor.java:43] - Start processing with chunkSize=2000
+2021-02-23_15:48:41.854 [http-nio-8080-exec-5] INFO  UserProcessor [UserProcessor.java:105] - Submit chunk: [gmail@gmail.com-user3@yandex.ru]
+2021-02-23_15:48:41.856 [http-nio-8080-exec-5] INFO  UserProcessor [UserProcessor.java:87] - [gmail@gmail.com-user3@yandex.ru] successfully executed with already presents: [gmail@gmail.com, admin@javaops.ru, deleted@yandex.ru, user1@gmail.com, user2@yandex.ru, user3@yandex.ru]
+2021-02-23_15:48:41.858 [http-nio-8080-exec-5] INFO  UploadServlet [UploadServlet.java:55] - java.sql.BatchUpdateException: Batch entry 0 INSERT INTO user_group (user_id, group_id) VALUES (120534, 100767) ON CONFLICT DO NOTHING was aborted: ОШИБКА: INSERT или UPDATE в таблице "user_group" нарушает ограничение внешнего ключа "user_group_user_id_fkey"
+  Подробности: Ключ (user_id)=(120534) отсутствует в таблице "users".  Call getNextException to see other errors in the batch. [statement:"INSERT INTO user_group (user_id, group_id) VALUES (:userId, :groupId) ON CONFLICT DO NOTHING", located:"null", rewritten:"null", arguments:{ positional:{}, named:{groupId:100769,class:class ru.javaops.masterjava.persist.model.UserGroup,userId:120539}, finder:[]}]
+org.skife.jdbi.v2.exceptions.UnableToExecuteStatementException: java.sql.BatchUpdateException: Batch entry 0 INSERT INTO user_group (user_id, group_id) VALUES (120534, 100767) ON CONFLICT DO NOTHING was aborted: ОШИБКА: INSERT или UPDATE в таблице "user_group" нарушает ограничение внешнего ключа "user_group_user_id_fkey"
+  Подробности: Ключ (user_id)=(120534) отсутствует в таблице "users".  Call getNextException to see other errors in the batch. [statement:"INSERT INTO user_group (user_id, group_id) VALUES (:userId, :groupId) ON CONFLICT DO NOTHING", located:"null", rewritten:"null", arguments:{ positional:{}, named:{groupId:100769,class:class ru.javaops.masterjava.persist.model.UserGroup,userId:120539}, finder:[]}]
+	at org.skife.jdbi.v2.PreparedBatch.internalBatchExecute(PreparedBatch.java:206)
+	at org.skife.jdbi.v2.PreparedBatch.execute(PreparedBatch.java:100)
+	at org.skife.jdbi.v2.sqlobject.BatchHandler$1.value(BatchHandler.java:65)
+	at org.skife.jdbi.v2.sqlobject.BatchHandler$5.inTransaction(BatchHandler.java:231)
+	at org.skife.jdbi.v2.sqlobject.BatchHandler$5.inTransaction(BatchHandler.java:227)
+	at org.skife.jdbi.v2.tweak.transactions.LocalTransactionHandler.inTransaction(LocalTransactionHandler.java:183)
+	at org.skife.jdbi.v2.BasicHandle.inTransaction(BasicHandle.java:338)
+	at org.skife.jdbi.v2.sqlobject.BatchHandler.executeBatch(BatchHandler.java:226)
+	at org.skife.jdbi.v2.sqlobject.BatchHandler.invoke(BatchHandler.java:204)
+	at org.skife.jdbi.v2.sqlobject.SqlObject.invoke(SqlObject.java:224)
+	at org.skife.jdbi.v2.sqlobject.SqlObject$3.intercept(SqlObject.java:133)
+	at ru.javaops.masterjava.persist.dao.UserGroupDao$$EnhancerByCGLIB$$2aa14c43.insertBatch(<generated>)
+	at ru.javaops.masterjava.upload.UserProcessor.process(UserProcessor.java:94)
+	at ru.javaops.masterjava.upload.PayloadProcessor.process(PayloadProcessor.java:33)
+	at ru.javaops.masterjava.upload.UploadServlet.doPost(UploadServlet.java:45)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:652)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:733)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:544)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:143)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:690)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:616)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:818)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1626)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.sql.BatchUpdateException: Batch entry 0 INSERT INTO user_group (user_id, group_id) VALUES (120534, 100767) ON CONFLICT DO NOTHING was aborted: ОШИБКА: INSERT или UPDATE в таблице "user_group" нарушает ограничение внешнего ключа "user_group_user_id_fkey"
+  Подробности: Ключ (user_id)=(120534) отсутствует в таблице "users".  Call getNextException to see other errors in the batch.
+	at org.postgresql.jdbc.BatchResultHandler.handleError(BatchResultHandler.java:148)
+	at org.postgresql.core.ResultHandlerDelegate.handleError(ResultHandlerDelegate.java:50)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2191)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:472)
+	at org.postgresql.jdbc.PgStatement.executeBatch(PgStatement.java:791)
+	at org.postgresql.jdbc.PgPreparedStatement.executeBatch(PgPreparedStatement.java:1563)
+	at org.apache.tomcat.dbcp.dbcp2.DelegatingStatement.executeBatch(DelegatingStatement.java:242)
+	at org.apache.tomcat.dbcp.dbcp2.DelegatingStatement.executeBatch(DelegatingStatement.java:242)
+	at org.skife.jdbi.v2.PreparedBatch.internalBatchExecute(PreparedBatch.java:196)
+	... 38 common frames omitted
+Caused by: org.postgresql.util.PSQLException: ОШИБКА: INSERT или UPDATE в таблице "user_group" нарушает ограничение внешнего ключа "user_group_user_id_fkey"
+  Подробности: Ключ (user_id)=(120534) отсутствует в таблице "users".
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2477)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2190)
+	... 44 common frames omitted
+2021-02-23_16:18:32.551 [RMI TCP Connection(3)-127.0.0.1] INFO  DBIProvider [DBIProvider.java:27] - Init jDBI with  JNDI
+2021-02-23_16:19:14.923 [http-nio-8080-exec-8] INFO  ProjectGroupProcessor [ProjectGroupProcessor.java:50] - Insert batch [Group(super=BaseEntity(id=null), name=topjava06, type=FINISHED, projectId=100799), Group(super=BaseEntity(id=null), name=topjava07, type=FINISHED, projectId=100799), Group(super=BaseEntity(id=null), name=topjava08, type=CURRENT, projectId=100799), Group(super=BaseEntity(id=null), name=masterjava01, type=CURRENT, projectId=100800)]
+2021-02-23_16:19:14.979 [http-nio-8080-exec-8] INFO  CityProcessor [CityProcessor.java:28] - Insert batch [City(super=RefEntity(ref=spb), name=Санкт-Петербург), City(super=RefEntity(ref=mow), name=Москва), City(super=RefEntity(ref=kiv), name=Киев), City(super=RefEntity(ref=mnsk), name=Минск)]
+2021-02-23_16:19:14.988 [http-nio-8080-exec-8] INFO  UserProcessor [UserProcessor.java:43] - Start processing with chunkSize=2000
+2021-02-23_16:19:15.066 [http-nio-8080-exec-8] INFO  UserProcessor [UserProcessor.java:107] - Submit chunk: [gmail@gmail.com-user3@yandex.ru]
+2021-02-23_16:19:15.102 [http-nio-8080-exec-8] INFO  UserProcessor [UserProcessor.java:88] - [gmail@gmail.com-user3@yandex.ru] successfully executed with already presents: []
+2021-02-23_16:19:15.118 [http-nio-8080-exec-8] INFO  UploadServlet [UploadServlet.java:46] - Failed users: []
+2021-02-23_16:20:35.859 [http-nio-8080-exec-3] INFO  ProjectGroupProcessor [ProjectGroupProcessor.java:50] - Insert batch [Group(super=BaseEntity(id=null), name=topjava06, type=FINISHED, projectId=0), Group(super=BaseEntity(id=null), name=topjava07, type=FINISHED, projectId=0), Group(super=BaseEntity(id=null), name=topjava08, type=CURRENT, projectId=0), Group(super=BaseEntity(id=null), name=masterjava01, type=CURRENT, projectId=0)]
+2021-02-23_16:20:35.864 [http-nio-8080-exec-3] INFO  CityProcessor [CityProcessor.java:28] - Insert batch []
+2021-02-23_16:20:35.866 [http-nio-8080-exec-3] INFO  UserProcessor [UserProcessor.java:43] - Start processing with chunkSize=2000
+2021-02-23_16:20:35.870 [http-nio-8080-exec-3] INFO  UserProcessor [UserProcessor.java:107] - Submit chunk: [gmail@gmail.com-user3@yandex.ru]
+2021-02-23_16:20:35.872 [http-nio-8080-exec-3] INFO  UserProcessor [UserProcessor.java:88] - [gmail@gmail.com-user3@yandex.ru] successfully executed with already presents: [gmail@gmail.com, admin@javaops.ru, deleted@yandex.ru, user1@gmail.com, user2@yandex.ru, user3@yandex.ru]
+2021-02-23_16:20:35.873 [http-nio-8080-exec-3] INFO  UploadServlet [UploadServlet.java:46] - Failed users: [[gmail@gmail.com, admin@javaops.ru, deleted@yandex.ru, user1@gmail.com, user2@yandex.ru, user3@yandex.ru] : already presents]
+2021-02-23_16:49:36.089 [RMI TCP Connection(3)-127.0.0.1] INFO  DBIProvider [DBIProvider.java:27] - Init jDBI with  JNDI
+2021-02-23_16:50:04.962 [http-nio-8080-exec-6] INFO  ProjectGroupProcessor [ProjectGroupProcessor.java:50] - Insert batch [Group(super=BaseEntity(id=null), name=topjava06, type=FINISHED, projectId=100811), Group(super=BaseEntity(id=null), name=topjava07, type=FINISHED, projectId=100811), Group(super=BaseEntity(id=null), name=topjava08, type=CURRENT, projectId=100811), Group(super=BaseEntity(id=null), name=masterjava01, type=CURRENT, projectId=100812)]
+2021-02-23_16:50:07.282 [http-nio-8080-exec-6] INFO  CityProcessor [CityProcessor.java:28] - Insert batch [City(super=RefEntity(ref=spb), name=Санкт-Петербург), City(super=RefEntity(ref=mow), name=Москва), City(super=RefEntity(ref=kiv), name=Киев), City(super=RefEntity(ref=mnsk), name=Минск)]
+2021-02-23_16:50:07.805 [http-nio-8080-exec-6] INFO  UserProcessor [UserProcessor.java:43] - Start processing with chunkSize=2000
+2021-02-23_16:50:08.026 [http-nio-8080-exec-6] INFO  UserProcessor [UserProcessor.java:107] - Submit chunk: [gmail@gmail.com-user3@yandex.ru]
+2021-02-23_16:50:08.070 [http-nio-8080-exec-6] INFO  UserProcessor [UserProcessor.java:88] - [gmail@gmail.com-user3@yandex.ru] successfully executed with already presents: []
+2021-02-23_16:54:02.854 [http-nio-8080-exec-6] INFO  UploadServlet [UploadServlet.java:46] - Failed users: []
+2021-02-23_17:02:46.566 [RMI TCP Connection(3)-127.0.0.1] INFO  DBIProvider [DBIProvider.java:27] - Init jDBI with  JNDI
+2021-02-23_17:03:10.050 [http-nio-8080-exec-9] INFO  ProjectGroupProcessor [ProjectGroupProcessor.java:50] - Insert batch [Group(super=BaseEntity(id=null), name=topjava06, type=FINISHED, projectId=100840), Group(super=BaseEntity(id=null), name=topjava07, type=FINISHED, projectId=100840), Group(super=BaseEntity(id=null), name=topjava08, type=CURRENT, projectId=100840), Group(super=BaseEntity(id=null), name=masterjava01, type=CURRENT, projectId=100841)]
+2021-02-23_17:03:10.110 [http-nio-8080-exec-9] INFO  CityProcessor [CityProcessor.java:28] - Insert batch [City(super=RefEntity(ref=spb), name=Санкт-Петербург), City(super=RefEntity(ref=mow), name=Москва), City(super=RefEntity(ref=kiv), name=Киев), City(super=RefEntity(ref=mnsk), name=Минск)]
+2021-02-23_17:03:10.119 [http-nio-8080-exec-9] INFO  UserProcessor [UserProcessor.java:44] - Start processing with chunkSize=2000
+2021-02-23_17:03:10.219 [http-nio-8080-exec-9] INFO  UserProcessor [UserProcessor.java:108] - Submit chunk: [gmail@gmail.com-user3@yandex.ru]
+2021-02-23_17:03:10.262 [http-nio-8080-exec-9] INFO  UserProcessor [UserProcessor.java:89] - [gmail@gmail.com-user3@yandex.ru] successfully executed with already presents: []
+2021-02-23_17:03:10.281 [http-nio-8080-exec-9] INFO  UploadServlet [UploadServlet.java:46] - Failed users: []
+2021-02-23_17:04:53.477 [http-nio-8080-exec-4] INFO  ProjectGroupProcessor [ProjectGroupProcessor.java:50] - Insert batch [Group(super=BaseEntity(id=null), name=topjava06, type=FINISHED, projectId=0), Group(super=BaseEntity(id=null), name=topjava07, type=FINISHED, projectId=0), Group(super=BaseEntity(id=null), name=topjava08, type=CURRENT, projectId=0), Group(super=BaseEntity(id=null), name=masterjava01, type=CURRENT, projectId=0)]
+2021-02-23_17:04:53.483 [http-nio-8080-exec-4] INFO  CityProcessor [CityProcessor.java:28] - Insert batch []
+2021-02-23_17:04:53.484 [http-nio-8080-exec-4] INFO  UserProcessor [UserProcessor.java:44] - Start processing with chunkSize=2000
+2021-02-23_17:04:53.489 [http-nio-8080-exec-4] INFO  UserProcessor [UserProcessor.java:108] - Submit chunk: [gmail@gmail.com-user3@yandex.ru]
+2021-02-23_17:04:53.491 [http-nio-8080-exec-4] INFO  UserProcessor [UserProcessor.java:89] - [gmail@gmail.com-user3@yandex.ru] successfully executed with already presents: [gmail@gmail.com, admin@javaops.ru, deleted@yandex.ru, user1@gmail.com, user2@yandex.ru, user3@yandex.ru]
+2021-02-23_17:04:53.492 [http-nio-8080-exec-4] INFO  UploadServlet [UploadServlet.java:46] - Failed users: [[gmail@gmail.com, admin@javaops.ru, deleted@yandex.ru, user1@gmail.com, user2@yandex.ru, user3@yandex.ru] : already presents]
+2021-02-23_17:33:32.740 [http-nio-8080-exec-7] INFO  ProjectGroupProcessor [ProjectGroupProcessor.java:50] - Insert batch [Group(super=BaseEntity(id=null), name=topjava06, type=FINISHED, projectId=0), Group(super=BaseEntity(id=null), name=topjava07, type=FINISHED, projectId=0), Group(super=BaseEntity(id=null), name=topjava08, type=CURRENT, projectId=0), Group(super=BaseEntity(id=null), name=masterjava01, type=CURRENT, projectId=0)]
+2021-02-23_17:33:32.744 [http-nio-8080-exec-7] INFO  CityProcessor [CityProcessor.java:28] - Insert batch []
+2021-02-23_17:33:32.745 [http-nio-8080-exec-7] INFO  UserProcessor [UserProcessor.java:44] - Start processing with chunkSize=2000
+2021-02-23_17:33:32.749 [http-nio-8080-exec-7] INFO  UserProcessor [UserProcessor.java:108] - Submit chunk: [gmail@gmail.com-user3@yandex.ru]
+2021-02-23_17:33:32.751 [http-nio-8080-exec-7] INFO  UserProcessor [UserProcessor.java:89] - [gmail@gmail.com-user3@yandex.ru] successfully executed with already presents: [gmail@gmail.com, admin@javaops.ru, deleted@yandex.ru, user2@yandex.ru, user3@yandex.ru]
+2021-02-23_17:33:32.752 [http-nio-8080-exec-7] INFO  UploadServlet [UploadServlet.java:46] - Failed users: [user1@gmail.com : Group 'masterjava99' is not present in DB, [gmail@gmail.com, admin@javaops.ru, deleted@yandex.ru, user2@yandex.ru, user3@yandex.ru] : already presents]

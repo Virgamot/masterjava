@@ -1,0 +1,54 @@
+2021-03-07_19:48:48.381 [pool-2-thread-1] INFO  DBIProvider [DBIProvider.java:27] - Init jDBI with  JNDI
+2021-03-07_19:48:48.704 [pool-2-thread-1] INFO  MailSender [MailSender.java:30] - Send mail to '[Admin <admin@javaops.ru>]' cc '[]' subject 'subj
+2021-03-07_19:48:50.522 [pool-2-thread-1] INFO  MailSender [MailSender.java:66] - Sent with state: OK
+2021-03-07_19:48:50.523 [http-nio-8080-exec-8] INFO  MailServiceExecutor [MailServiceExecutor.java:58] - groupResult: Success: 1
+Failed: []
+2021-03-07_20:16:14.596 [pool-2-thread-2] INFO  MailSender [MailSender.java:30] - Send mail to '[ivan <ipodskochin@mail.ru>]' cc '[]' subject 'subj
+2021-03-07_20:16:15.509 [pool-2-thread-2] INFO  MailSender [MailSender.java:66] - Sent with state: OK
+2021-03-07_20:16:15.510 [http-nio-8080-exec-10] INFO  MailServiceExecutor [MailServiceExecutor.java:58] - groupResult: Success: 1
+Failed: []
+2021-03-07_21:39:14.154 [pool-2-thread-1] INFO  DBIProvider [DBIProvider.java:27] - Init jDBI with  JNDI
+2021-03-07_21:39:14.483 [pool-2-thread-1] INFO  MailSender [MailSender.java:30] - Send mail to '[ivan <ipodskochin@mail.ru>]' cc '[]' subject 'subj
+2021-03-07_21:39:16.357 [pool-2-thread-1] INFO  MailSender [MailSender.java:66] - Sent with state: OK
+2021-03-07_21:39:16.357 [http-nio-8080-exec-5] INFO  MailServiceExecutor [MailServiceExecutor.java:58] - groupResult: Success: 1
+Failed: []
+2021-03-07_21:46:45.048 [pool-2-thread-2] INFO  MailSender [MailSender.java:30] - Send mail to '[ivan <ipodskochin@mail.ru>]' cc '[]' subject 'subj
+2021-03-07_21:46:45.841 [pool-2-thread-2] INFO  MailSender [MailSender.java:66] - Sent with state: OK
+2021-03-07_21:46:45.841 [http-nio-8080-exec-9] INFO  MailServiceExecutor [MailServiceExecutor.java:58] - groupResult: Success: 1
+Failed: []
+2021-03-07_21:48:46.091 [pool-2-thread-3] INFO  MailSender [MailSender.java:30] - Send mail to '[ivan <ipodskochin@mail.ru>]' cc '[]' subject 'subj
+2021-03-07_21:48:46.896 [pool-2-thread-3] INFO  MailSender [MailSender.java:66] - Sent with state: OK
+2021-03-07_21:48:46.897 [http-nio-8080-exec-1] INFO  MailServiceExecutor [MailServiceExecutor.java:58] - groupResult: Success: 1
+Failed: []
+2021-03-07_22:03:13.021 [pool-2-thread-1] INFO  DBIProvider [DBIProvider.java:27] - Init jDBI with  JNDI
+2021-03-07_22:03:13.315 [pool-2-thread-1] INFO  MailSender [MailSender.java:30] - Send mail to '[ivan <ipodskochin@mail.ru>]' cc '[]' subject 'subj
+2021-03-07_22:03:15.046 [pool-2-thread-1] INFO  MailSender [MailSender.java:65] - Sent with state: OK
+2021-03-07_22:03:15.047 [http-nio-8080-exec-6] INFO  MailServiceExecutor [MailServiceExecutor.java:58] - groupResult: Success: 1
+Failed: []
+2021-03-07_22:03:36.949 [pool-2-thread-2] INFO  MailSender [MailSender.java:30] - Send mail to '[ivan <ipodskochin@mail.ru>]' cc '[]' subject 'subj
+2021-03-07_22:03:37.675 [pool-2-thread-2] INFO  MailSender [MailSender.java:65] - Sent with state: OK
+2021-03-07_22:03:37.676 [http-nio-8080-exec-8] INFO  MailServiceExecutor [MailServiceExecutor.java:58] - groupResult: Success: 1
+Failed: []
+2021-03-07_22:04:17.238 [pool-2-thread-3] INFO  MailSender [MailSender.java:30] - Send mail to '[ivan <ipodskochin@mail.ru>]' cc '[]' subject 'subj
+2021-03-07_22:04:18.128 [pool-2-thread-3] INFO  MailSender [MailSender.java:65] - Sent with state: OK
+2021-03-07_22:04:18.129 [http-nio-8080-exec-10] INFO  MailServiceExecutor [MailServiceExecutor.java:58] - groupResult: Success: 1
+Failed: []
+2021-03-07_22:06:13.732 [pool-2-thread-1] INFO  DBIProvider [DBIProvider.java:27] - Init jDBI with  JNDI
+2021-03-07_22:06:14.040 [pool-2-thread-1] INFO  MailSender [MailSender.java:30] - Send mail to '[ivan <ipodskochin@mail.ru>]' cc '[]' subject 'subj
+2021-03-07_22:06:25.395 [pool-2-thread-1] INFO  MailSender [MailSender.java:65] - Sent with state: OK
+2021-03-07_22:06:51.674 [pool-2-thread-2] INFO  MailSender [MailSender.java:30] - Send mail to '[ivan <ipodskochin@mail.ru>]' cc '[]' subject 'subj
+2021-03-07_22:07:20.653 [pool-2-thread-2] INFO  MailSender [MailSender.java:65] - Sent with state: OK
+2021-03-07_22:13:32.822 [pool-2-thread-3] INFO  MailSender [MailSender.java:30] - Send mail to '[ivan <ipodskochin@mail.ru>]' cc '[]' subject 'subj
+2021-03-07_22:13:35.653 [pool-2-thread-3] INFO  MailSender [MailSender.java:65] - Sent with state: OK
+2021-03-07_22:13:35.653 [http-nio-8080-exec-9] INFO  MailServiceExecutor [MailServiceExecutor.java:58] - groupResult: Success: 1
+Failed: []
+2021-03-07_22:15:59.519 [pool-2-thread-4] INFO  MailSender [MailSender.java:30] - Send mail to '[ivan <ipodskochin@mail.ru>]' cc '[]' subject 'subj
+2021-03-07_22:16:39.150 [pool-2-thread-4] INFO  MailSender [MailSender.java:65] - Sent with state: OK
+2021-03-07_22:17:05.143 [pool-2-thread-5] INFO  MailSender [MailSender.java:30] - Send mail to '[ivan <ipodskochin@mail.ru>]' cc '[]' subject 'subj
+2021-03-07_22:17:05.920 [pool-2-thread-5] INFO  MailSender [MailSender.java:65] - Sent with state: OK
+2021-03-07_22:17:05.921 [http-nio-8080-exec-1] INFO  MailServiceExecutor [MailServiceExecutor.java:58] - groupResult: Success: 1
+Failed: []
+2021-03-07_22:17:21.600 [pool-2-thread-6] INFO  MailSender [MailSender.java:30] - Send mail to '[ivan <ipodskochin@mail.ru>]' cc '[]' subject 'subj
+2021-03-07_22:17:22.372 [pool-2-thread-6] INFO  MailSender [MailSender.java:65] - Sent with state: OK
+2021-03-07_22:17:22.373 [http-nio-8080-exec-3] INFO  MailServiceExecutor [MailServiceExecutor.java:58] - groupResult: Success: 1
+Failed: []

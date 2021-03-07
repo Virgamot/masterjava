@@ -1,0 +1,8 @@
+2020-12-22_17:15:11.825 [http-nio-8080-exec-7] INFO  DBIProvider [DBIProvider.java:29] - Init jDBI with  JNDI
+2020-12-22_17:21:15.712 [http-nio-8080-exec-7] INFO  DBIProvider [DBIProvider.java:29] - Init jDBI with  JNDI
+2020-12-22_20:23:06.050 [RMI TCP Connection(3)-127.0.0.1] INFO  DBIProvider [DBIProvider.java:29] - Init jDBI with  JNDI
+2020-12-22_20:39:26.858 [RMI TCP Connection(3)-127.0.0.1] INFO  DBIProvider [DBIProvider.java:29] - Init jDBI with  JNDI
+2020-12-22_20:49:57.525 [RMI TCP Connection(3)-127.0.0.1] INFO  DBIProvider [DBIProvider.java:29] - Init jDBI with  JNDI
+2020-12-22_20:51:11.503 [RMI TCP Connection(3)-127.0.0.1] INFO  DBIProvider [DBIProvider.java:29] - Init jDBI with  JNDI
+2020-12-22_20:53:36.721 [RMI TCP Connection(3)-127.0.0.1] INFO  DBIProvider [DBIProvider.java:29] - Init jDBI with  JNDI
+2020-12-22_20:55:38.625 [RMI TCP Connection(3)-127.0.0.1] INFO  DBIProvider [DBIProvider.java:29] - Init jDBI with  JNDI

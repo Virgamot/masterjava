@@ -1,0 +1,9 @@
+2020-12-23_17:47:12.804 [RMI TCP Connection(3)-127.0.0.1] INFO  DBIProvider [DBIProvider.java:29] - Init jDBI with  JNDI
+2020-12-23_17:47:23.003 [http-nio-8080-exec-8] INFO  UserProcessor [UserProcessor.java:54] - Start processing with chunkSize=2
+2020-12-23_17:47:23.411 [http-nio-8080-exec-8] INFO  UserProcessor [UserProcessor.java:111] - Submit chunk: gmail@gmail.com-admin@javaops.ru
+2020-12-23_17:47:23.464 [http-nio-8080-exec-8] INFO  UserProcessor [UserProcessor.java:111] - Submit chunk: deleted@yandex.ru-user1@gmail.com
+2020-12-23_17:47:23.512 [http-nio-8080-exec-8] INFO  UserProcessor [UserProcessor.java:111] - Submit chunk: user2@yandex.ru-user3@yandex.ru
+2020-12-23_17:47:23.524 [http-nio-8080-exec-8] INFO  UserProcessor [UserProcessor.java:98] - gmail@gmail.com-admin@javaops.ru successfully executed
+2020-12-23_17:47:23.525 [http-nio-8080-exec-8] INFO  UserProcessor [UserProcessor.java:98] - deleted@yandex.ru-user1@gmail.com successfully executed
+2020-12-23_17:47:23.525 [http-nio-8080-exec-8] INFO  UserProcessor [UserProcessor.java:98] - user2@yandex.ru-user3@yandex.ru successfully executed
+2020-12-23_17:47:23.526 [http-nio-8080-exec-8] INFO  UploadServlet [UploadServlet.java:47] - Failed users: [gmail@gmail.com : already present, admin@javaops.ru : already present, deleted@yandex.ru : already present, user1@gmail.com : already present, user2@yandex.ru : already present, user3@yandex.ru : already present]

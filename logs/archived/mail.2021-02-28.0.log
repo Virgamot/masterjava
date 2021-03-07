@@ -1,0 +1,6 @@
+2021-02-28_23:58:42.720 [pool-2-thread-1] INFO  DBIProvider [DBIProvider.java:27] - Init jDBI with  JNDI
+2021-02-28_23:58:43.020 [pool-2-thread-1] INFO  MailSender [MailSender.java:24] - Send mail to '[ivan <ipodskochin@mail.ru>]' cc '[]' subject 'subj
+2021-02-28_23:58:44.739 [pool-2-thread-1] INFO  MailSender [MailSender.java:46] - Sent with state: OK
+2021-02-28_23:58:44.739 [http-nio-8080-exec-10] INFO  MailServiceExecutor [MailServiceExecutor.java:56] - groupResult: Success: 1
+Failed: []
+

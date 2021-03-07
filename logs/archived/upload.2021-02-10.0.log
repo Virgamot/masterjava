@@ -1,0 +1,64 @@
+2021-02-10_00:33:15.592 [RMI TCP Connection(5)-127.0.0.1] INFO  DBIProvider [DBIProvider.java:27] - Init jDBI with  JNDI
+2021-02-10_00:34:31.805 [http-nio-8080-exec-10] INFO  UploadServlet [UploadServlet.java:55] - org.postgresql.util.PSQLException: ОШИБКА: повторяющееся значение ключа нарушает ограничение уникальности "project_name_key"
+  Подробности: Ключ "(name)=(topjava)" уже существует. [statement:"INSERT INTO project (name, description)  VALUES (:name, :description)", located:"INSERT INTO project (name, description)  VALUES (:name, :description)", rewritten:"INSERT INTO project (name, description)  VALUES (?, ?)", arguments:{ positional:{}, named:{new:true,name:'topjava',description:'Topjava',id:null,class:class ru.javaops.masterjava.persist.model.Project}, finder:[]}]
+org.skife.jdbi.v2.exceptions.UnableToExecuteStatementException: org.postgresql.util.PSQLException: ОШИБКА: повторяющееся значение ключа нарушает ограничение уникальности "project_name_key"
+  Подробности: Ключ "(name)=(topjava)" уже существует. [statement:"INSERT INTO project (name, description)  VALUES (:name, :description)", located:"INSERT INTO project (name, description)  VALUES (:name, :description)", rewritten:"INSERT INTO project (name, description)  VALUES (?, ?)", arguments:{ positional:{}, named:{new:true,name:'topjava',description:'Topjava',id:null,class:class ru.javaops.masterjava.persist.model.Project}, finder:[]}]
+	at org.skife.jdbi.v2.SQLStatement.internalExecute(SQLStatement.java:1338)
+	at org.skife.jdbi.v2.Update.executeAndReturnGeneratedKeys(Update.java:82)
+	at org.skife.jdbi.v2.sqlobject.UpdateHandler$1.value(UpdateHandler.java:56)
+	at org.skife.jdbi.v2.sqlobject.UpdateHandler.invoke(UpdateHandler.java:79)
+	at org.skife.jdbi.v2.sqlobject.SqlObject.invoke(SqlObject.java:224)
+	at org.skife.jdbi.v2.sqlobject.SqlObject$3.intercept(SqlObject.java:133)
+	at ru.javaops.masterjava.persist.dao.ProjectDao$$EnhancerByCGLIB$$7294c1b6.insertGeneratedId(<generated>)
+	at ru.javaops.masterjava.persist.dao.ProjectDao.insert(ProjectDao.java:34)
+	at ru.javaops.masterjava.persist.dao.ProjectDao$$EnhancerByCGLIB$$7294c1b6.CGLIB$insert$1(<generated>)
+	at ru.javaops.masterjava.persist.dao.ProjectDao$$EnhancerByCGLIB$$7294c1b6$$FastClassByCGLIB$$11a6290e.invoke(<generated>)
+	at org.skife.jdbi.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:228)
+	at org.skife.jdbi.v2.sqlobject.PassThroughHandler.invoke(PassThroughHandler.java:34)
+	at org.skife.jdbi.v2.sqlobject.SqlObject.invoke(SqlObject.java:224)
+	at org.skife.jdbi.v2.sqlobject.SqlObject$3.intercept(SqlObject.java:133)
+	at ru.javaops.masterjava.persist.dao.ProjectDao$$EnhancerByCGLIB$$7294c1b6.insert(<generated>)
+	at ru.javaops.masterjava.upload.ProjectGroupProcessor.process(ProjectGroupProcessor.java:37)
+	at ru.javaops.masterjava.upload.PayloadProcessor.process(PayloadProcessor.java:31)
+	at ru.javaops.masterjava.upload.UploadServlet.doPost(UploadServlet.java:45)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:652)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:733)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:544)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:143)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:690)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:616)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:818)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1626)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: org.postgresql.util.PSQLException: ОШИБКА: повторяющееся значение ключа нарушает ограничение уникальности "project_name_key"
+  Подробности: Ключ "(name)=(topjava)" уже существует.
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2477)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2190)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:300)
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:428)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:354)
+	at org.postgresql.jdbc.PgPreparedStatement.executeWithFlags(PgPreparedStatement.java:169)
+	at org.postgresql.jdbc.PgPreparedStatement.execute(PgPreparedStatement.java:158)
+	at org.apache.tomcat.dbcp.dbcp2.DelegatingPreparedStatement.execute(DelegatingPreparedStatement.java:93)
+	at org.apache.tomcat.dbcp.dbcp2.DelegatingPreparedStatement.execute(DelegatingPreparedStatement.java:93)
+	at org.skife.jdbi.v2.SQLStatement.internalExecute(SQLStatement.java:1327)
+	... 41 common frames omitted
+2021-02-10_00:36:35.348 [http-nio-8080-exec-3] INFO  ProjectGroupProcessor [ProjectGroupProcessor.java:51] - Insert batch [Group(super=BaseEntity(id=null), name=topjava06, type=FINISHED, projectId=100570), Group(super=BaseEntity(id=null), name=topjava07, type=FINISHED, projectId=100570), Group(super=BaseEntity(id=null), name=topjava08, type=CURRENT, projectId=100570), Group(super=BaseEntity(id=null), name=masterjava01, type=CURRENT, projectId=100571)]
+2021-02-10_00:36:35.408 [http-nio-8080-exec-3] INFO  CityProcessor [CityProcessor.java:28] - Insert batch []
+2021-02-10_00:36:35.409 [http-nio-8080-exec-3] INFO  UserProcessor [UserProcessor.java:39] - Start processing with chunkSize=2000
+2021-02-10_00:36:35.474 [http-nio-8080-exec-3] INFO  UploadServlet [UploadServlet.java:46] - Failed users: []
