@@ -30,7 +30,7 @@ public class MailWSClient {
                 new QName("http://mail.javaops.ru/", "MailServiceImplService"),
                 MailService.class);
 
-        WS_CLIENT.init("mail", "/mail/mailService?wsdl");
+        WS_CLIENT.init("endpoint", "/mail/mailService?wsdl");
     }
 
 
