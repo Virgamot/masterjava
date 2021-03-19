@@ -15,15 +15,9 @@ import java.util.List;
 import java.util.Map;
 
 public class WsClient<T> {
-    private static Config HOSTS;
-
     private final Class<T> serviceClass;
     private final Service service;
     private String endpointAddress;
-
-    static {
-        HOSTS = Configs.getConfig("hosts.conf", "hosts").getConfig("mail");
-    }
 
     public WsClient(URL wsdlUrl, QName qname, Class<T> serviceClass) {
         this.serviceClass = serviceClass;
@@ -31,7 +25,7 @@ public class WsClient<T> {
     }
 
     public void init(String endpoint, String endpointAddress) {
-        this.endpointAddress = HOSTS.getString(endpoint) + endpointAddress;
+        this.endpointAddress = HostsConfig.MAIL_CONFIG.getString(endpoint) + endpointAddress;
     }
 
     //  Post is not thread-safe (http://stackoverflow.com/a/10601916/548473)

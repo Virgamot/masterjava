@@ -3,6 +3,7 @@ package ru.javaops.masterjava.web.handler;
 import com.sun.xml.ws.api.handler.MessageHandlerContext;
 import lombok.extern.slf4j.Slf4j;
 import ru.javaops.masterjava.web.AuthUtil;
+import ru.javaops.masterjava.web.HostsConfig;
 
 import javax.xml.ws.handler.MessageContext;
 import java.util.List;
@@ -11,7 +12,7 @@ import java.util.Map;
 @Slf4j
 public class SoapServerSecurityHandler extends SoapBaseHandler {
 
-    private static String USERS_AUTH_HEADER = AuthUtil.encodeBasicAuthHeader("user","password");
+    private static String USERS_AUTH_HEADER = AuthUtil.encodeBasicAuthHeader(HostsConfig.USER,HostsConfig.PASSWORD);
 
     @Override
     public boolean handleMessage(MessageHandlerContext context) {
