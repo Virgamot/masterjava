@@ -133,7 +133,11 @@ public abstract class SoapLoggingHandlers extends SoapBaseHandler {
     public static class ServerHandler extends SoapLoggingHandlers {
 
         public ServerHandler() {
-            super(HostsConfig.SERVER_LOGGING_LEVEL);
+            super(Level.INFO);
+        }
+
+        public ServerHandler(Level logLvl) {
+            super(logLvl);
         }
 
         @Override
