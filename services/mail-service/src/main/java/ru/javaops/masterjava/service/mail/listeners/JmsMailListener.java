@@ -1,12 +1,19 @@
 package ru.javaops.masterjava.service.mail.listeners;
 
+import com.google.common.collect.ImmutableList;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.activemq.ActiveMQConnectionFactory;
+import ru.javaops.masterjava.service.mail.MailServiceExecutor;
+import ru.javaops.masterjava.service.mail.jms.JmsEmail;
+import ru.javaops.masterjava.service.mail.util.Attachments;
+import ru.javaops.masterjava.web.WebStateException;
 
 import javax.jms.*;
 import javax.naming.InitialContext;
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
 import javax.servlet.annotation.WebListener;
+import java.io.ByteArrayInputStream;
 
 @WebListener
 @Slf4j
@@ -23,6 +30,8 @@ public class JmsMailListener implements ServletContextListener {
             connection = connectionFactory.createQueueConnection();
             QueueSession queueSession = connection.createQueueSession(false, Session.AUTO_ACKNOWLEDGE);
             Queue queue = (Queue) initCtx.lookup("java:comp/env/jms/queue/MailQueue");
+            ActiveMQConnectionFactory activeMQConnectionFactory = (ActiveMQConnectionFactory) connectionFactory;
+            activeMQConnectionFactory.setTrustAllPackages(true);
             QueueReceiver receiver = queueSession.createReceiver(queue);
             connection.start();
             log.info("Listen JMS messages ...");
@@ -30,12 +39,9 @@ public class JmsMailListener implements ServletContextListener {
                 try {
                     while (!Thread.interrupted()) {
                         Message m = receiver.receive();
-                        // TODO implement mail sending
-                        if (m instanceof TextMessage) {
-                            TextMessage tm = (TextMessage) m;
-                            String text = tm.getText();
-                            log.info("Received TextMessage with text '{}'", text);
-                        }
+                        ObjectMessage om = (ObjectMessage) m;
+                        JmsEmail jmsEmail = (JmsEmail) om.getObject();
+                        sendEmail(jmsEmail);
                     }
                 } catch (Exception e) {
                     log.error("Receiving messages failed: " + e.getMessage(), e);
@@ -45,6 +51,16 @@ public class JmsMailListener implements ServletContextListener {
         } catch (Exception e) {
             log.error("JMS failed: " + e.getMessage(), e);
         }
+    }
+
+    private void sendEmail(JmsEmail jmsEmail) throws WebStateException {
+        Byte[] jmsBytes = jmsEmail.getBytes();
+        byte[] bytes = new byte[jmsBytes.length];
+        for (int i = 0; i < jmsBytes.length; i++) {
+            bytes[i] = jmsBytes[i];
+        }
+        MailServiceExecutor.sendBulk(jmsEmail.getEmailsTo(), jmsEmail.getSubject(), jmsEmail.getBody(),
+                ImmutableList.of(Attachments.getAttachment(jmsEmail.getAttachedFileName(), new ByteArrayInputStream(bytes))));
     }
 
     @Override

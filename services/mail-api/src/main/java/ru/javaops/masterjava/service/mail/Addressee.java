@@ -6,13 +6,14 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlValue;
+import java.io.Serializable;
 
 @AllArgsConstructor
 @NoArgsConstructor
 @EqualsAndHashCode(of = "email")
 @XmlAccessorType(XmlAccessType.FIELD)
 @Getter
-public class Addressee {
+public class Addressee implements Serializable {
     @XmlAttribute
     private @NonNull String email;
     @XmlValue

@@ -71,14 +71,16 @@
         }
 
         var param;
+
+        var data = new FormData();
+        data.append('users', users);
+        data.append('subject', $("#subject").val());
+        data.append('body', $("#body").val());
+        var attach = $('#attach')[0].files[0];
+        if (attach) data.append('attach', attach);
+
         if (transport === "SOAP") {
             // https://stackoverflow.com/a/5976031/548473
-            var data = new FormData();
-            data.append('users', users);
-            data.append('subject', $("#subject").val());
-            data.append('body', $("#body").val());
-            var attach = $('#attach')[0].files[0];
-            if (attach) data.append('attach', attach);
             param = {
                 url: "sendSoap",
                 data: data,
@@ -99,8 +101,9 @@
         } else if (transport === "JMS") {
             param = {
                 url:  "sendJms",
-                data: "users=" + users + "&subject=" + $("#subject").val() + "&body=" + $("#body").val(),
-                contentType: "application/x-www-form-urlencoded"
+                data: data,
+                contentType: false,
+                processData: false
             };
         }
 
