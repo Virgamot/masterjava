@@ -46,6 +46,10 @@ public class MailSender {
             email.setHeaders(ImmutableMap.of("List-Unsubscribe", "<mailto:masterjava@javaops.ru?subject=Unsubscribe&body=Unsubscribe>"));
 
             email.send();
+
+            for (Attachment attach : attachments) {
+                attach.getDataHandler().getDataSource().getInputStream().close();
+            }
         } catch (Exception e) {
             log.error(e.getMessage(), e);
             state = e.getMessage();

@@ -85,9 +85,20 @@
                 contentType: false,
                 processData: false
             };
-        } else if (transport === "REST" || transport === "JMS") {
+        } else if (transport === "REST") {
+            var attachedData = new FormData();
+            var inputData = $('#attach')[0].files[0];
+            if (inputData) attachedData.append('attach', inputData);
             param = {
-                url: (transport === "REST" ? "/mail/rest/send" : "sendJms"),
+                url: "/mail/rest/send?"+"users=" + users + "&subject=" + $("#subject").val() + "&body=" + $("#body").val(),
+                data:  attachedData,
+                cache: false,
+                contentType: false,
+                processData : false
+            };
+        } else if (transport === "JMS") {
+            param = {
+                url:  "sendJms",
                 data: "users=" + users + "&subject=" + $("#subject").val() + "&body=" + $("#body").val(),
                 contentType: "application/x-www-form-urlencoded"
             };
