@@ -1,12 +1,9 @@
 package ru.javaops.masterjava.webapp.akka;
 
 import lombok.extern.slf4j.Slf4j;
-import ru.javaops.masterjava.service.mail.GroupResult;
 import ru.javaops.masterjava.service.mail.MailRemoteService;
-import ru.javaops.masterjava.service.mail.util.MailUtils.MailObject;
-import scala.concurrent.Await;
-import scala.concurrent.duration.Duration;
 
+import javax.servlet.AsyncContext;
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.MultipartConfig;
@@ -16,8 +13,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-import static ru.javaops.masterjava.webapp.WebUtil.createMailObject;
-import static ru.javaops.masterjava.webapp.WebUtil.doAndWriteResponse;
 import static ru.javaops.masterjava.webapp.akka.AkkaWebappListener.akkaActivator;
 
 @WebServlet(value = "/sendAkkaTyped", loadOnStartup = 1, asyncSupported = true)
@@ -36,13 +31,8 @@ public class AkkaTypedSendServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {
         req.setCharacterEncoding("UTF-8");
-        doAndWriteResponse(resp, () -> sendAkka(createMailObject(req)));
-    }
-
-    private String sendAkka(MailObject mailObject) throws Exception {
-        scala.concurrent.Future<GroupResult> future = mailService.sendBulk(mailObject);
-        log.info("Receive future, waiting result ...");
-        GroupResult groupResult = Await.result(future, Duration.create(10, "seconds"));
-        return groupResult.toString();
+        AsyncContext ac = req.startAsync();
+        TypedSendWorker worker = new TypedSendWorker(ac, mailService);
+        ac.start(worker);
     }
 }
